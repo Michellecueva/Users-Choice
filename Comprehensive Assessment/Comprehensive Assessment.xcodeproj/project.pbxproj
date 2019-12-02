@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,19 @@
 		28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D623956AB8006312F7 /* Assets.xcassets */; };
 		28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */; };
 		28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63E123957261006312F7 /* GoogleService-Info.plist */; };
+		28FD63EA23957531006312F7 /* Comprehensive_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28FD63EC23957531006312F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28FD63BF23956AB5006312F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28FD63C623956AB5006312F7;
+			remoteInfo = "Comprehensive Assessment";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comprehensive Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +40,9 @@
 		28FD63D923956AB8006312F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28FD63DB23956AB8006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FD63E123957261006312F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28FD63E723957530006312F7 /* Comprehensive AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comprehensive AssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comprehensive_AssessmentTests.swift; sourceTree = "<group>"; };
+		28FD63EB23957531006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +57,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		28FD63E423957530006312F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -50,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD63C923956AB5006312F7 /* Comprehensive Assessment */,
+				28FD63E823957531006312F7 /* Comprehensive AssessmentTests */,
 				28FD63C823956AB5006312F7 /* Products */,
 				ABAF43443401320B2CDC84E1 /* Pods */,
 				E3F3EB0F3045CE566D79E52D /* Frameworks */,
@@ -60,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */,
+				28FD63E723957530006312F7 /* Comprehensive AssessmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,13 +103,21 @@
 			path = "Comprehensive Assessment";
 			sourceTree = "<group>";
 		};
+		28FD63E823957531006312F7 /* Comprehensive AssessmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */,
+				28FD63EB23957531006312F7 /* Info.plist */,
+			);
+			path = "Comprehensive AssessmentTests";
+			sourceTree = "<group>";
+		};
 		ABAF43443401320B2CDC84E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */,
 				6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,6 +151,24 @@
 			productReference = 28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		28FD63E623957530006312F7 /* Comprehensive AssessmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28FD63F023957531006312F7 /* Build configuration list for PBXNativeTarget "Comprehensive AssessmentTests" */;
+			buildPhases = (
+				28FD63E323957530006312F7 /* Sources */,
+				28FD63E423957530006312F7 /* Frameworks */,
+				28FD63E523957530006312F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28FD63ED23957531006312F7 /* PBXTargetDependency */,
+			);
+			name = "Comprehensive AssessmentTests";
+			productName = "Comprehensive AssessmentTests";
+			productReference = 28FD63E723957530006312F7 /* Comprehensive AssessmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +181,10 @@
 				TargetAttributes = {
 					28FD63C623956AB5006312F7 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					28FD63E623957530006312F7 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 28FD63C623956AB5006312F7;
 					};
 				};
 			};
@@ -149,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				28FD63C623956AB5006312F7 /* Comprehensive Assessment */,
+				28FD63E623957530006312F7 /* Comprehensive AssessmentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +216,13 @@
 				28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */,
 				28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */,
 				28FD63D223956AB5006312F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FD63E523957530006312F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +282,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		28FD63E323957530006312F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28FD63EA23957531006312F7 /* Comprehensive_AssessmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28FD63ED23957531006312F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28FD63C623956AB5006312F7 /* Comprehensive Assessment */;
+			targetProxy = 28FD63EC23957531006312F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		28FD63D023956AB5006312F7 /* Main.storyboard */ = {
@@ -393,6 +470,44 @@
 			};
 			name = Release;
 		};
+		28FD63EE23957531006312F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Comprehensive AssessmentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Michelle.Comprehensive-AssessmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comprehensive Assessment.app/Comprehensive Assessment";
+			};
+			name = Debug;
+		};
+		28FD63EF23957531006312F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Comprehensive AssessmentTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Michelle.Comprehensive-AssessmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Comprehensive Assessment.app/Comprehensive Assessment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,6 +525,15 @@
 			buildConfigurations = (
 				28FD63DF23956AB8006312F7 /* Debug */,
 				28FD63E023956AB8006312F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28FD63F023957531006312F7 /* Build configuration list for PBXNativeTarget "Comprehensive AssessmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28FD63EE23957531006312F7 /* Debug */,
+				28FD63EF23957531006312F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
