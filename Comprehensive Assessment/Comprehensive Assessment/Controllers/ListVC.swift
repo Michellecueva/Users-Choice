@@ -8,7 +8,14 @@
 
 import UIKit
 
+enum DataLocation {
+    case fromSearch
+    case fromFavorites
+}
+
 class ListVC: UIViewController {
+    
+    var dataLocation: DataLocation! = .fromSearch
 
     override func viewDidLoad() {
         super.viewDidLoad()

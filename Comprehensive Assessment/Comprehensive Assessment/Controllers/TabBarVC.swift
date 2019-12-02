@@ -9,22 +9,31 @@
 import UIKit
 
 class TabBarVC: UITabBarController {
+    
+    
+    lazy var searchVC = UINavigationController(rootViewController: createSearchVC())
+    
+    lazy var favoriteVC = createFavoritesVC()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        self.viewControllers = [searchVC, favoriteVC]
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func createSearchVC() -> UIViewController {
+        let firstVC = ListVC()
+        firstVC.dataLocation = .fromSearch
+        return firstVC
     }
-    */
+    
+    private func createFavoritesVC() -> UIViewController {
+        let secondVC = ListVC()
+        secondVC.dataLocation = .fromFavorites
+        return secondVC
+        
+    }
 
 }
