@@ -14,6 +14,8 @@
 		28FD63D523956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */; };
 		28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D623956AB8006312F7 /* Assets.xcassets */; };
 		28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */; };
+		28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63E123957261006312F7 /* GoogleService-Info.plist */; };
+		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		28FD63D623956AB8006312F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28FD63D923956AB8006312F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28FD63DB23956AB8006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28FD63E123957261006312F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
+		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
+		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				28FD63C923956AB5006312F7 /* Comprehensive Assessment */,
 				28FD63C823956AB5006312F7 /* Products */,
+				ABAF43443401320B2CDC84E1 /* Pods */,
+				E3F3EB0F3045CE566D79E52D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +74,28 @@
 				28FD63D623956AB8006312F7 /* Assets.xcassets */,
 				28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */,
 				28FD63DB23956AB8006312F7 /* Info.plist */,
+				28FD63E123957261006312F7 /* GoogleService-Info.plist */,
 				28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */,
 			);
 			path = "Comprehensive Assessment";
+			sourceTree = "<group>";
+		};
+		ABAF43443401320B2CDC84E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */,
+				6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E3F3EB0F3045CE566D79E52D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28FD63DE23956AB8006312F7 /* Build configuration list for PBXNativeTarget "Comprehensive Assessment" */;
 			buildPhases = (
+				459654702FA3566BCD460758 /* [CP] Check Pods Manifest.lock */,
 				28FD63C323956AB5006312F7 /* Sources */,
 				28FD63C423956AB5006312F7 /* Frameworks */,
 				28FD63C523956AB5006312F7 /* Resources */,
+				394BC4A763F91DA574764014 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +159,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */,
+				28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */,
 				28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */,
 				28FD63D223956AB5006312F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		394BC4A763F91DA574764014 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		459654702FA3566BCD460758 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Comprehensive Assessment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28FD63C323956AB5006312F7 /* Sources */ = {
@@ -286,6 +359,7 @@
 		};
 		28FD63DF23956AB8006312F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +377,7 @@
 		};
 		28FD63E023956AB8006312F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

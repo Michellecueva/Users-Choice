@@ -7,4 +7,10 @@ target 'Comprehensive Assessment' do
 
   # Pods for Comprehensive Assessment
 
+pod 'Firebase/Auth'
+
+pod 'Firebase/Firestore'
+
+pod 'Firebase/Storage'
+
 end
