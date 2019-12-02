@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CA23956AB5006312F7 /* AppDelegate.swift */; };
 		28FD63CD23956AB5006312F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CC23956AB5006312F7 /* SceneDelegate.swift */; };
-		28FD63CF23956AB5006312F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CE23956AB5006312F7 /* ViewController.swift */; };
+		28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CE23956AB5006312F7 /* SignInVC.swift */; };
 		28FD63D223956AB5006312F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D023956AB5006312F7 /* Main.storyboard */; };
 		28FD63D523956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */; };
 		28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D623956AB8006312F7 /* Assets.xcassets */; };
 		28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */; };
 		28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63E123957261006312F7 /* GoogleService-Info.plist */; };
 		28FD63EA23957531006312F7 /* Comprehensive_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */; };
+		28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F1239575D5006312F7 /* TabBarVC.swift */; };
+		28FD63F423957678006312F7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F323957678006312F7 /* SignUpVC.swift */; };
+		28FD63F6239576A1006312F7 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F5239576A1006312F7 /* ListVC.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +36,7 @@
 		28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comprehensive Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD63CA23956AB5006312F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28FD63CC23956AB5006312F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28FD63CE23956AB5006312F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28FD63CE23956AB5006312F7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		28FD63D123956AB5006312F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28FD63D423956AB5006312F7 /* Comprehensive_Assessment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comprehensive_Assessment.xcdatamodel; sourceTree = "<group>"; };
 		28FD63D623956AB8006312F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +46,9 @@
 		28FD63E723957530006312F7 /* Comprehensive AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comprehensive AssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comprehensive_AssessmentTests.swift; sourceTree = "<group>"; };
 		28FD63EB23957531006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28FD63F1239575D5006312F7 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		28FD63F323957678006312F7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		28FD63F5239576A1006312F7 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,12 +96,9 @@
 		28FD63C923956AB5006312F7 /* Comprehensive Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				28FD63CA23956AB5006312F7 /* AppDelegate.swift */,
-				28FD63CC23956AB5006312F7 /* SceneDelegate.swift */,
-				28FD63CE23956AB5006312F7 /* ViewController.swift */,
-				28FD63D023956AB5006312F7 /* Main.storyboard */,
-				28FD63D623956AB8006312F7 /* Assets.xcassets */,
-				28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */,
+				28FD63F7239577D0006312F7 /* Controllers */,
+				28FD63F8239577F4006312F7 /* Views */,
+				28FD63F923957818006312F7 /* Supporting Files */,
 				28FD63DB23956AB8006312F7 /* Info.plist */,
 				28FD63E123957261006312F7 /* GoogleService-Info.plist */,
 				28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */,
@@ -110,6 +113,36 @@
 				28FD63EB23957531006312F7 /* Info.plist */,
 			);
 			path = "Comprehensive AssessmentTests";
+			sourceTree = "<group>";
+		};
+		28FD63F7239577D0006312F7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28FD63F1239575D5006312F7 /* TabBarVC.swift */,
+				28FD63CE23956AB5006312F7 /* SignInVC.swift */,
+				28FD63F323957678006312F7 /* SignUpVC.swift */,
+				28FD63F5239576A1006312F7 /* ListVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		28FD63F8239577F4006312F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28FD63D023956AB5006312F7 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28FD63F923957818006312F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28FD63CA23956AB5006312F7 /* AppDelegate.swift */,
+				28FD63CC23956AB5006312F7 /* SceneDelegate.swift */,
+				28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */,
+				28FD63D623956AB8006312F7 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		ABAF43443401320B2CDC84E1 /* Pods */ = {
@@ -275,10 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28FD63CF23956AB5006312F7 /* ViewController.swift in Sources */,
+				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
 				28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */,
+				28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */,
 				28FD63D523956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld in Sources */,
+				28FD63F423957678006312F7 /* SignUpVC.swift in Sources */,
 				28FD63CD23956AB5006312F7 /* SceneDelegate.swift in Sources */,
+				28FD63F6239576A1006312F7 /* ListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
