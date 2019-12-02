@@ -28,6 +28,7 @@ class TableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
+        setConstraints()
        
     }
     
@@ -59,9 +60,10 @@ class TableViewCell: UITableViewCell {
         self.listImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            listImageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-            listImageView.heightAnchor.constraint(equalToConstant: 50),
-            listImageView.widthAnchor.constraint(equalToConstant: 50),
+            listImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            listImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+            listImageView.heightAnchor.constraint(equalToConstant: 80),
+            listImageView.widthAnchor.constraint(equalToConstant: 80),
             
             nameLabel.topAnchor.constraint(equalTo: listImageView.topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: listImageView.trailingAnchor, constant: 20),
