@@ -10,6 +10,11 @@ import Foundation
 
 struct TicketWrapper: Codable {
     let _embedded: EmbeddedWrapper
+    
+    static func decodeEventFromData(from jsonData: Data) throws -> ([Event]) {
+           let response = try JSONDecoder().decode(TicketWrapper.self, from: jsonData)
+        return (response._embedded.events)
+       }
 }
 
 struct EmbeddedWrapper: Codable {
@@ -20,7 +25,7 @@ struct Event: Codable {
     let name: String?
     let url: String?
     let images: [Image]?
-    let dates: Date?
+    let dates: DateOfEvent?
     let priceRanges: [PriceRange]?
 }
 
@@ -28,7 +33,7 @@ struct Image: Codable {
     let url: String
 }
 
-struct Date: Codable {
+struct DateOfEvent: Codable {
     let start: Start
 }
 

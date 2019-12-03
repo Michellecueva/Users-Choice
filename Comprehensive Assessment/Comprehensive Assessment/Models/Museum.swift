@@ -10,6 +10,11 @@ import Foundation
 
 struct MuseumWrapper: Codable {
     let artObjects: [ArtObject]
+    
+    static func decodeObjectFromData(from jsonData: Data) throws -> ([ArtObject]) {
+              let response = try JSONDecoder().decode(MuseumWrapper.self, from: jsonData)
+        return (response.artObjects)
+          }
 }
 
 struct ArtObject: Codable {
