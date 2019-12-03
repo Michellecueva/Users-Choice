@@ -43,7 +43,7 @@ class SignInVC: UIViewController {
         button.titleLabel?.font = UIFont(name: "Arial-Bold", size: 16)
         button.backgroundColor = #colorLiteral(red: 0.1345793307, green: 0.03780555353, blue: 0.9968826175, alpha: 1)
         button.layer.cornerRadius = 5
-//        button.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tryLogin), for: .touchUpInside)
         button.isEnabled = true
         return button
     }()
@@ -67,7 +67,7 @@ class SignInVC: UIViewController {
         ))
         
         button.setAttributedTitle(attributedTitle, for: .normal)
-//        button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return button
     }()
 
@@ -76,7 +76,73 @@ class SignInVC: UIViewController {
         self.view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         setSubviews()
         setConstraints()
+       
     }
+    
+    //MARK: Obj-C Methods
+      
+      @objc func showSignUp() {
+          let signUpVC = SignUpVC()
+          self.present(signUpVC, animated: true, completion: nil)
+      }
+    
+    @objc func signOutButton() {
+        FirebaseAuthService.manager.signOutUser()
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+        
+        window.rootViewController = SignInVC()
+    }
+      
+      @objc func tryLogin() {
+          
+          guard let email = emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines), let password = passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+              showErrorAlert(title: "Error", message: "Please fill out all fields.")
+              return
+          }
+          
+          
+          guard email.isValidEmail else {
+              showErrorAlert(title: "Error", message: "Please enter a valid email")
+              return
+          }
+          
+          guard password.isValidPassword else {
+              showErrorAlert(title: "Error", message: "Please enter a valid password. Passwords must have at least 8 characters.")
+              return
+          }
+          
+          FirebaseAuthService.manager.loginUser(email: email, password: password) { [weak self] (result) in
+              self?.handleLoginResponse(result: result)
+          }
+          
+      }
+      
+      //MARK: Private func
+      
+      private func showErrorAlert(title: String, message: String) {
+          let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+          alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          present(alertVC, animated: true, completion: nil)
+      }
+      
+      private func handleLoginResponse(result: Result<(), Error>) {
+          switch result {
+          case .failure(let error):
+              showErrorAlert(title: "Error", message: "Could not log in. Error \(error)")
+          case .success:
+              guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              
+                  let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+              
+              UIView.transition(with: window, duration: 0.3, options: .curveLinear, animations: {
+                  window.rootViewController = TabBarVC()
+              }, completion: nil)
+          }
+      }
+
 
       //MARK: UI Setup
         

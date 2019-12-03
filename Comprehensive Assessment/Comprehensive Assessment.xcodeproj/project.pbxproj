@@ -20,6 +20,10 @@
 		28FD63F423957678006312F7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F323957678006312F7 /* SignUpVC.swift */; };
 		28FD63F6239576A1006312F7 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F5239576A1006312F7 /* ListVC.swift */; };
 		28FD63FB2395A0F0006312F7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63FA2395A0F0006312F7 /* TableViewCell.swift */; };
+		28FD63FD2395B589006312F7 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63FC2395B589006312F7 /* FirebaseAuthService.swift */; };
+		28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63FF2395B5C5006312F7 /* FirestoreService.swift */; };
+		28FD64042395B66D006312F7 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64032395B66D006312F7 /* AppUser.swift */; };
+		28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64062395C56F006312F7 /* StringExtensions.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		28FD63F323957678006312F7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		28FD63F5239576A1006312F7 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		28FD63FA2395A0F0006312F7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		28FD63FC2395B589006312F7 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		28FD63FF2395B5C5006312F7 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		28FD64032395B66D006312F7 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		28FD64062395C56F006312F7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +106,11 @@
 		28FD63C923956AB5006312F7 /* Comprehensive Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				28FD64062395C56F006312F7 /* StringExtensions.swift */,
 				28FD63F7239577D0006312F7 /* Controllers */,
 				28FD63F8239577F4006312F7 /* Views */,
+				28FD64052395B676006312F7 /* Models */,
+				28FD63FE2395B592006312F7 /* Firebase */,
 				28FD63F923957818006312F7 /* Supporting Files */,
 				28FD63DB23956AB8006312F7 /* Info.plist */,
 				28FD63E123957261006312F7 /* GoogleService-Info.plist */,
@@ -146,6 +157,23 @@
 				28FD63D623956AB8006312F7 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28FD63FE2395B592006312F7 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				28FD63FC2395B589006312F7 /* FirebaseAuthService.swift */,
+				28FD63FF2395B5C5006312F7 /* FirestoreService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		28FD64052395B676006312F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28FD64032395B66D006312F7 /* AppUser.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ABAF43443401320B2CDC84E1 /* Pods */ = {
@@ -311,10 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */,
 				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
+				28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */,
 				28FD63FB2395A0F0006312F7 /* TableViewCell.swift in Sources */,
+				28FD64042395B66D006312F7 /* AppUser.swift in Sources */,
 				28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */,
 				28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */,
+				28FD63FD2395B589006312F7 /* FirebaseAuthService.swift in Sources */,
 				28FD63D523956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld in Sources */,
 				28FD63F423957678006312F7 /* SignUpVC.swift in Sources */,
 				28FD63CD23956AB5006312F7 /* SceneDelegate.swift in Sources */,

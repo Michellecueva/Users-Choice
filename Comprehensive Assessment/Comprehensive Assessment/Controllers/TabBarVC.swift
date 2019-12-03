@@ -26,6 +26,7 @@ class TabBarVC: UITabBarController {
     private func createSearchVC() -> UIViewController {
         let firstVC = ListVC()
         firstVC.dataLocation = .fromSearch
+        firstVC.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sign-out", style: .done, target: self, action: #selector(signOutButton))
         return firstVC
     }
     
@@ -34,6 +35,16 @@ class TabBarVC: UITabBarController {
         secondVC.dataLocation = .fromFavorites
         return secondVC
         
+    }
+    
+    @objc func signOutButton() {
+        FirebaseAuthService.manager.signOutUser()
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+        
+        window.rootViewController = SignInVC()
     }
 
 }

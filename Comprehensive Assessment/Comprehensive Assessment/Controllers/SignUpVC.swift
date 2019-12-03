@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 enum APINames: String {
     case ticketmaster
@@ -14,6 +16,8 @@ enum APINames: String {
 }
 
 class SignUpVC: UIViewController {
+    
+    var accountType: String!
     
     lazy var titleLabel: UILabel = {
            let label = UILabel()
@@ -54,7 +58,7 @@ class SignUpVC: UIViewController {
            button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 14)
            button.backgroundColor = #colorLiteral(red: 0.1345793307, green: 0.03780555353, blue: 0.9968826175, alpha: 1)
            button.layer.cornerRadius = 5
-          // button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
+           button.addTarget(self, action: #selector(trySignUp), for: .touchUpInside)
            button.isEnabled = true
            return button
        }()
@@ -93,6 +97,80 @@ class SignUpVC: UIViewController {
         setSubviews()
         setConstraints()
     }
+    
+    //MARK: Obj-C Methods
+       
+       
+       @objc func trySignUp() {
+           if !validateFields() {
+               return
+           }
+           
+           let email = emailTextField.text!
+           let password = passwordTextField.text!
+           FirebaseAuthService.manager.createNewUser(email: email, password:password) { [weak self] (result) in
+               self?.handleCreateAccountResponse(result: result)
+           }
+       }
+       
+       
+       //MARK: Private methods
+       
+       private func showErrorAlert(title: String, message: String) {
+           let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+           present(alertVC, animated: true, completion: nil)
+       }
+       
+       private func validateFields() -> Bool {
+           guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+               showErrorAlert(title: "Error", message: "Please fill out all fields.")
+               return false
+           }
+           
+           guard email.isValidEmail else {
+               showErrorAlert(title: "Error", message: "Please enter a valid email")
+               return false
+           }
+           
+           guard password.isValidPassword else {
+               showErrorAlert(title: "Error", message: "Please enter a valid password. Passwords must have at least 8 characters.")
+               return false
+           }
+           
+           return true
+       }
+       
+       private func handleCreateAccountResponse(result: Result<User, Error>) {
+           DispatchQueue.main.async { [weak self] in
+               switch result {
+               case .success(let user):
+                // figure out how to get the info from picker view
+                   FirestoreService.manager.createAppUser(user: AppUser(from: user, accountType: "Ticketmaster")) { [weak self] (result) in
+                       self?.handleCreatedUserInFirestoreResponse(result: result)
+                   }
+               case .failure(let error):
+                   self?.showErrorAlert(title: "Error creating user", message: error.localizedDescription)
+               }
+           }
+       }
+       
+       private func handleCreatedUserInFirestoreResponse(result: Result<(), Error>) {
+           switch result {
+           case .failure(let error):
+               showErrorAlert(title: "Error", message: "Could not log in. Error \(error)")
+           case .success:
+               guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               
+                   let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+               
+               UIView.transition(with: window, duration: 0.3, options: .curveLinear, animations: {
+                   window.rootViewController = TabBarVC()
+               }, completion: nil)
+           }
+       }
+       
+ 
     
     //MARK: UI Setup
          
@@ -187,6 +265,5 @@ extension SignUpVC: UIPickerViewDataSource, UIPickerViewDelegate {
        
         }
     }
-    
     
 }
