@@ -31,6 +31,7 @@
 		28FD6412239619B8006312F7 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6411239619B8006312F7 /* NetworkHelper.swift */; };
 		28FD6414239619EB006312F7 /* TicketsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6413239619EB006312F7 /* TicketsAPIClient.swift */; };
 		28FD641623961A06006312F7 /* MuseumAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641523961A06006312F7 /* MuseumAPIClient.swift */; };
+		28FD641823961B10006312F7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641723961B10006312F7 /* Secrets.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		28FD6411239619B8006312F7 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		28FD6413239619EB006312F7 /* TicketsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsAPIClient.swift; sourceTree = "<group>"; };
 		28FD641523961A06006312F7 /* MuseumAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAPIClient.swift; sourceTree = "<group>"; };
+		28FD641723961B10006312F7 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Secrets.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD64062395C56F006312F7 /* StringExtensions.swift */,
+				28FD641923961B1B006312F7 /* Secrets */,
 				28FD63F7239577D0006312F7 /* Controllers */,
 				28FD63F8239577F4006312F7 /* Views */,
 				28FD64052395B676006312F7 /* Models */,
@@ -203,6 +206,14 @@
 				28FD641523961A06006312F7 /* MuseumAPIClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		28FD641923961B1B006312F7 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				28FD641723961B10006312F7 /* Secrets.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 		ABAF43443401320B2CDC84E1 /* Pods */ = {
@@ -369,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */,
+				28FD641823961B10006312F7 /* Secrets.swift in Sources */,
 				28FD640923960FE2006312F7 /* Tickets.swift in Sources */,
 				28FD640D239610EF006312F7 /* AppError.swift in Sources */,
 				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
