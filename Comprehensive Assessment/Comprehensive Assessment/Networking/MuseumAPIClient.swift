@@ -18,7 +18,7 @@ struct MuseumAPIClient {
 }
     
 
-    func getTickets(maker: String, completionHandler: @escaping (Result<([ArtObject]), AppError>) -> Void) {
+    func getArtObjects(maker: String, completionHandler: @escaping (Result<([ArtObject]), AppError>) -> Void) {
         NetworkHelper.manager.performDataTask(withUrl: getMuseumURL(maker: maker), andMethod: .get) { result in
             switch result {
             case let .failure(error):

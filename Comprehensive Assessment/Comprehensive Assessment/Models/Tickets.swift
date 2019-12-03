@@ -24,7 +24,7 @@ struct EmbeddedWrapper: Codable {
 struct Event: Codable {
     let name: String?
     let url: String?
-    let images: [Image]?
+    let images: [Image]
     let dates: DateOfEvent?
     let priceRanges: [PriceRange]?
 }

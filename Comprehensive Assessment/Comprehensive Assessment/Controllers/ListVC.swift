@@ -18,6 +18,11 @@ class ListVC: UIViewController {
     
     var dataLocation: DataLocation! = .fromSearch
     
+    var items = [Event]() {
+        didSet {
+            listTableView.reloadData()
+        }
+    }
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -38,7 +43,36 @@ class ListVC: UIViewController {
         setConstraints()
         listTableView.delegate = self
         listTableView.dataSource = self
+        loadDataFromTickets(city: "Queens", state: "NY")
         
+    }
+    
+    //MARK: Private Functions
+    
+    private func loadDataFromTickets(city: String, state: String) {
+        TicketsAPIClient.manager.getTickets(city: city, state: state) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let eventsFromOnline):
+                    self.items = eventsFromOnline
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    private func loadDataFromMuseum(maker: String) {
+        MuseumAPIClient.manager.getArtObjects(maker: maker) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let objectsFromOnline):
+                    print(objectsFromOnline)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
     
     //MARK: UI Setup
@@ -80,15 +114,30 @@ class ListVC: UIViewController {
 
 extension ListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listTableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! TableViewCell
         
-        cell.nameLabel.text = "Title"
-        cell.eventTimeLabel.text = "Time"
-        cell.listImageView.image = UIImage(named: "noImage")
+        let currentItem = items[indexPath.row]
+        cell.nameLabel.text = currentItem.name
+        cell.eventTimeLabel.text = currentItem.dates?.start.localDate.description
+        
+        
+        
+        ImageHelper.shared.getImage(urlStr: currentItem.images[0].url) { (result) in
+            
+            switch result {
+            case .success(let imageFromOnline):
+                DispatchQueue.main.async {
+                    cell.listImageView.image = imageFromOnline
+                }
+            case .failure(let error):
+                print(error)
+                 cell.listImageView.image = UIImage(named: "noImage")
+            }
+        }
         return cell
     }
     
