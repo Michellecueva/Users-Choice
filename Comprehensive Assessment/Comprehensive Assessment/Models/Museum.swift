@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+struct MuseumWrapper: Codable {
+    let artObjects: [ArtObject]
+}
+
+struct ArtObject: Codable {
+    let objectNumber: String
+    let title: String
+    let principalOrFirstMaker: String
+    let webImage: WebImage
+    
+}
+
+struct WebImage: Codable {
+    let url: String
+}
