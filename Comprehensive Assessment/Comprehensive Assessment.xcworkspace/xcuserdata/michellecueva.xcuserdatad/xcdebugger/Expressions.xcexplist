@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in FirestoreService.createAppUser(user:completion:):FirestoreService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SignUpVC.pickerView(_:titleForRow:forComponent:):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "APINames.ticketmaster.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpVC.handleCreateAccountResponse(result:):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "accountType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FirestoreService.createAppUser(user:completion:):FirestoreService.swift">
          <PersistentStrings>
             <PersistentString

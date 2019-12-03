@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 enum DataLocation {
     case fromSearch
     case fromFavorites
@@ -16,6 +17,7 @@ enum DataLocation {
 class ListVC: UIViewController {
     
     var dataLocation: DataLocation! = .fromSearch
+    
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()

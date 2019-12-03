@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 enum APINames: String {
     case ticketmaster
     case rijksmuseum
@@ -17,7 +18,7 @@ enum APINames: String {
 
 class SignUpVC: UIViewController {
     
-    var accountType: String!
+    var accountType = "ticketmaster"
     
     lazy var titleLabel: UILabel = {
            let label = UILabel()
@@ -146,7 +147,7 @@ class SignUpVC: UIViewController {
                switch result {
                case .success(let user):
                 // figure out how to get the info from picker view
-                   FirestoreService.manager.createAppUser(user: AppUser(from: user, accountType: "Ticketmaster")) { [weak self] (result) in
+                FirestoreService.manager.createAppUser(user: AppUser(from: user, accountType: self?.accountType)) { [weak self] (result) in
                        self?.handleCreatedUserInFirestoreResponse(result: result)
                    }
                case .failure(let error):
@@ -259,11 +260,11 @@ extension SignUpVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch row {
         case 0:
-            return APINames.ticketmaster.rawValue
+            accountType = APINames.ticketmaster.rawValue
         default:
-            return APINames.rijksmuseum.rawValue
-       
+            accountType = APINames.rijksmuseum.rawValue
         }
+        return accountType
     }
     
 }
