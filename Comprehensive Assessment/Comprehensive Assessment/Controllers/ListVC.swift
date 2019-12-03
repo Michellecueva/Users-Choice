@@ -18,7 +18,7 @@ class ListVC: UIViewController {
     
     var dataLocation: DataLocation! = .fromSearch
     
-    var items = [Event]() {
+    var items = [ArtObject]() {
         didSet {
             listTableView.reloadData()
         }
@@ -43,7 +43,7 @@ class ListVC: UIViewController {
         setConstraints()
         listTableView.delegate = self
         listTableView.dataSource = self
-        loadDataFromTickets(city: "Queens", state: "NY")
+        loadDataFromMuseum(maker: "Rembrandt+van+Rijn")
         
     }
     
@@ -54,7 +54,8 @@ class ListVC: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let eventsFromOnline):
-                    self.items = eventsFromOnline
+                    print(eventsFromOnline)
+                    //self.items = eventsFromOnline
                 case .failure(let error):
                     print(error)
                 }
@@ -67,7 +68,7 @@ class ListVC: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let objectsFromOnline):
-                    print(objectsFromOnline)
+                    self.items = objectsFromOnline
                 case .failure(let error):
                     print(error)
                 }
@@ -121,12 +122,13 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         let cell = listTableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! TableViewCell
         
         let currentItem = items[indexPath.row]
-        cell.nameLabel.text = currentItem.name
-        cell.eventTimeLabel.text = currentItem.dates?.start.localDate.description
+        cell.nameLabel.text = currentItem.title
+        
+        cell.eventTimeLabel.text = currentItem.principalOrFirstMaker
         
         
         
-        ImageHelper.shared.getImage(urlStr: currentItem.images[0].url) { (result) in
+        ImageHelper.shared.getImage(urlStr: currentItem.webImage.url) { (result) in
             
             switch result {
             case .success(let imageFromOnline):
