@@ -25,6 +25,12 @@ class TableViewCell: UITableViewCell {
         return imageView
     }()
     
+    var favoriteButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
@@ -52,12 +58,14 @@ class TableViewCell: UITableViewCell {
         self.contentView.addSubview(self.nameLabel)
         self.contentView.addSubview(self.eventTimeLabel)
         self.contentView.addSubview(self.listImageView)
+        self.contentView.addSubview(self.favoriteButton)
     }
     
     private func setConstraints() {
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.eventTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.listImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             listImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
@@ -71,7 +79,12 @@ class TableViewCell: UITableViewCell {
             
             eventTimeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
             eventTimeLabel.leadingAnchor.constraint(equalTo: listImageView.trailingAnchor, constant: 20),
-            eventTimeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -15)
+            eventTimeLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -15),
+            
+            favoriteButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            favoriteButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            favoriteButton.heightAnchor.constraint(equalToConstant: 50),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
 

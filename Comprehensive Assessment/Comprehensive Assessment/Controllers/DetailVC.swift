@@ -16,6 +16,8 @@ class DetailVC: UIViewController {
     
     var imageRetrieved: UIImage!
     
+    
+    
     @IBOutlet weak var detailImage: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,6 +36,16 @@ class DetailVC: UIViewController {
 
     }
     
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func getTicketsButtonPressed(_ sender: UIButton) {
+        //if you are on ticketMaster account make this visiible and direct to link
+    }
+    
+    
     private func loadData() {
         DetailAPIClient.manager.getDetailObjects(objectNumber: currentItem.objectNumber) { (result) in
             
@@ -41,7 +53,7 @@ class DetailVC: UIViewController {
                 switch result {
                 case .success(let detailsFromOnline):
                     
-                    // remember to account for the fact that some museum items dont have plaque or place of prodction 
+                    // remember to account for the fact that some museum items dont have plaque or place of prodction
                     self.descriptionBox.text = detailsFromOnline.plaqueDescriptionEnglish
                 case .failure(let error):
                     print(error)
@@ -50,8 +62,6 @@ class DetailVC: UIViewController {
 
         }
     }
-    
-    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
-    }
+
     
 }
