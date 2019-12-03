@@ -32,6 +32,9 @@
 		28FD6414239619EB006312F7 /* TicketsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6413239619EB006312F7 /* TicketsAPIClient.swift */; };
 		28FD641623961A06006312F7 /* MuseumAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641523961A06006312F7 /* MuseumAPIClient.swift */; };
 		28FD641823961B10006312F7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641723961B10006312F7 /* Secrets.swift */; };
+		28FD641B2396ED8F006312F7 /* ArtObjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */; };
+		28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */; };
+		28FD641F23970042006312F7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641E23970042006312F7 /* DetailVC.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,9 @@
 		28FD6413239619EB006312F7 /* TicketsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsAPIClient.swift; sourceTree = "<group>"; };
 		28FD641523961A06006312F7 /* MuseumAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAPIClient.swift; sourceTree = "<group>"; };
 		28FD641723961B10006312F7 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Secrets.swift; sourceTree = "<group>"; };
+		28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectDetail.swift; sourceTree = "<group>"; };
+		28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPIClient.swift; sourceTree = "<group>"; };
+		28FD641E23970042006312F7 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +159,7 @@
 				28FD63CE23956AB5006312F7 /* SignInVC.swift */,
 				28FD63F323957678006312F7 /* SignUpVC.swift */,
 				28FD63F5239576A1006312F7 /* ListVC.swift */,
+				28FD641E23970042006312F7 /* DetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				28FD64032395B66D006312F7 /* AppUser.swift */,
 				28FD640823960FE2006312F7 /* Tickets.swift */,
 				28FD640A23961013006312F7 /* Museum.swift */,
+				28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				28FD6411239619B8006312F7 /* NetworkHelper.swift */,
 				28FD6413239619EB006312F7 /* TicketsAPIClient.swift */,
 				28FD641523961A06006312F7 /* MuseumAPIClient.swift */,
+				28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD641B2396ED8F006312F7 /* ArtObjectDetail.swift in Sources */,
 				28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */,
 				28FD641823961B10006312F7 /* Secrets.swift in Sources */,
 				28FD640923960FE2006312F7 /* Tickets.swift in Sources */,
@@ -388,6 +398,7 @@
 				28FD63FB2395A0F0006312F7 /* TableViewCell.swift in Sources */,
 				28FD64042395B66D006312F7 /* AppUser.swift in Sources */,
 				28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */,
+				28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */,
 				28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */,
 				28FD63FD2395B589006312F7 /* FirebaseAuthService.swift in Sources */,
 				28FD6412239619B8006312F7 /* NetworkHelper.swift in Sources */,
@@ -396,6 +407,7 @@
 				28FD63F423957678006312F7 /* SignUpVC.swift in Sources */,
 				28FD640B23961013006312F7 /* Museum.swift in Sources */,
 				28FD63CD23956AB5006312F7 /* SceneDelegate.swift in Sources */,
+				28FD641F23970042006312F7 /* DetailVC.swift in Sources */,
 				28FD63F6239576A1006312F7 /* ListVC.swift in Sources */,
 				28FD641623961A06006312F7 /* MuseumAPIClient.swift in Sources */,
 				28FD6410239618E9006312F7 /* ImageHelper.swift in Sources */,

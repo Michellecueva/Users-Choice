@@ -24,6 +24,8 @@ class ListVC: UIViewController {
         }
     }
     
+    var imageRetrieved: UIImage!
+    
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         return searchBar
@@ -43,7 +45,7 @@ class ListVC: UIViewController {
         setConstraints()
         listTableView.delegate = self
         listTableView.dataSource = self
-        loadDataFromMuseum(maker: "Rembrandt+van+Rijn")
+        searchBar.delegate = self
         
     }
     
@@ -133,6 +135,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
             switch result {
             case .success(let imageFromOnline):
                 DispatchQueue.main.async {
+                    self.imageRetrieved = imageFromOnline
                     cell.listImageView.image = imageFromOnline
                 }
             case .failure(let error):
@@ -147,5 +150,24 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentItem = items[indexPath.row]
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
+        
+        DVC.currentItem = currentItem
+        DVC.imageRetrieved = imageRetrieved
+        
+        self.navigationController?.pushViewController(DVC, animated: true)
+        
+
+    }
+}
+
+extension ListVC : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        loadDataFromMuseum(maker: searchBar.text ?? "")
+    }
 }

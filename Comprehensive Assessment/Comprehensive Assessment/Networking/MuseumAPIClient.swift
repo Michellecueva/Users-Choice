@@ -13,7 +13,8 @@ struct MuseumAPIClient {
     static let manager = MuseumAPIClient()
     
     private func  getMuseumURL(maker: String) -> URL {
-        guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=\(Secrets.museumAPIKey)&involvedMaker=\(maker)") else {fatalError("Error: Invalid URL")}
+        let fixedStr = maker.replacingOccurrences(of: " ", with: "+")
+        guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=\(Secrets.museumAPIKey)&q=\(fixedStr)&imgonly=true") else {fatalError("Error: Invalid URL")}
      return url
 }
     
