@@ -18,5 +18,5 @@ protocol RequiredFields {
     
     var objectID: String? {get}
     
-    var postID: String? {get}
+    var favoriteID: String? {get}
 }

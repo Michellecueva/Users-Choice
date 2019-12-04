@@ -52,7 +52,7 @@ struct Event: Codable, RequiredFields {
     }
     
     var objectID: String?
-    var postID: String?
+    var favoriteID: String?
     
 }
 

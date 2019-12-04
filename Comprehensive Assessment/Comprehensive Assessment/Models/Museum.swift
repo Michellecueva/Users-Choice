@@ -45,7 +45,7 @@ struct ArtObject: Codable, RequiredFields {
         return objectNumber
     }
     
-      var postID: String?
+      var favoriteID: String?
     
 }
 

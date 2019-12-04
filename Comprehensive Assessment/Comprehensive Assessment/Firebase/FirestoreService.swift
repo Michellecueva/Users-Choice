@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 fileprivate enum FireStoreCollections: String {
     case users
-    case posts
+    case favorites
 }
 
 enum FireBaseServiceError: Error {
@@ -60,38 +60,31 @@ class FirestoreService {
     }
     //MARK: Posts
     
-//    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {
-//           var fields = post.fieldsDict
-//           fields["dateCreated"] = Date()
-//           db.collection(FireStoreCollections.posts.rawValue).addDocument(data: fields) { (error) in
-//               if let error = error {
-//                   completion(.failure(error))
-//               } else {
-//                   completion(.success(()))
-//               }
-//           }
-//       }
-//       
-//       func getAllPosts(completion: @escaping (Result<[Post], Error>) -> ()) {
-//           let completionHandler: FIRQuerySnapshotBlock = {(snapshot, error) in
-//               if let error = error {
-//                   completion(.failure(error))
-//               } else {
-//                   let posts = snapshot?.documents.compactMap({ (snapshot) -> Post? in
-//                       let postID = snapshot.documentID
-//                       let post = Post(from: snapshot.data(), id: postID)
-//                       return post
-//                   })
-//                   completion(.success(posts ?? []))
-//               }
-//           }
-//
-//           //type: Collection Reference
-//           let collection = db.collection(FireStoreCollections.posts.rawValue)
-//         
-//         
-//            let query = collection.order(by:"dateCreated", descending: true)
-//               query.getDocuments(completion: completionHandler)
-//
-//       }
+    func createFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
+           var fields = favorite.fieldsDict
+           fields["dateCreated"] = Date()
+           db.collection(FireStoreCollections.favorites.rawValue).addDocument(data: fields) { (error) in
+               if let error = error {
+                   completion(.failure(error))
+               } else {
+                   completion(.success(()))
+               }
+           }
+       }
+       
+    func getFavorites(forUserID: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
+        db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let favorites = snapshot?.documents.compactMap({ (snapshot) -> Favorite? in
+                    let favoriteID = snapshot.documentID
+                    let favorites = Favorite(from: snapshot.data(), id: favoriteID)
+                    return favorites
+                })
+                completion(.success(favorites ?? []))
+            }
+        }
+        
+    }
 }

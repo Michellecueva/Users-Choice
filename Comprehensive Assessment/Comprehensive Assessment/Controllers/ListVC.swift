@@ -16,6 +16,7 @@ enum DataLocation {
 }
 
 class ListVC: UIViewController {
+
     
     var dataLocation: DataLocation! = .fromSearch
     var accountType: String! {
@@ -66,6 +67,12 @@ class ListVC: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if dataLocation == .fromFavorites {
+            getFavoritesForThisUser()
+        }
+    }
+    
     //MARK: Private Functions
     
     private func loadDataFromTickets(city: String, state: String) {
@@ -89,6 +96,24 @@ class ListVC: UIViewController {
                     self.items = objectsFromOnline
                 case .failure(let error):
                     print(error)
+                }
+            }
+        }
+    }
+    
+    private func getFavoritesForThisUser() {
+        
+        guard  let id =  FirebaseAuthService.manager.currentUser?.uid else {
+            print("userID not found")
+            return
+        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            FirestoreService.manager.getFavorites(forUserID: id) { (result) in
+                switch result {
+                case .success(let favorites):
+                    self?.items = favorites
+                case .failure(let error):
+                    print(":( \(error)")
                 }
             }
         }
@@ -209,8 +234,23 @@ extension ListVC : UISearchBarDelegate {
 }
 
 extension ListVC: CellDelegate {
+
     func addToFavorites(tag: Int) {
-        print("hey")
+        let currentItem = items[tag]
+        
+        guard let user = FirebaseAuthService.manager.currentUser else {return}
+        
+        let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid)
+        
+        FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
+            switch result {
+            case .success():
+                print("this worked")
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
     
     

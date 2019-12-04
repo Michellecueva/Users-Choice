@@ -13,7 +13,7 @@ class TabBarVC: UITabBarController {
     
     lazy var searchVC = UINavigationController(rootViewController: createSearchVC())
     
-    lazy var favoriteVC = createFavoritesVC()
+    lazy var favoriteVC = UINavigationController(rootViewController: createFavoritesVC())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,7 @@ class TabBarVC: UITabBarController {
     private func createFavoritesVC() -> UIViewController {
         let secondVC = ListVC()
         secondVC.dataLocation = .fromFavorites
+        secondVC.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sign-out", style: .done, target: self, action: #selector(signOutButton))
         return secondVC
         
     }
