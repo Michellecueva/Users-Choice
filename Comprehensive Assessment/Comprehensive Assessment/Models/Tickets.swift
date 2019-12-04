@@ -22,6 +22,7 @@ struct EmbeddedWrapper: Codable {
 }
 
 struct Event: Codable, RequiredFields {
+    
     let name: String
     let url: String?
     let images: [Image]
@@ -51,6 +52,7 @@ struct Event: Codable, RequiredFields {
     }
     
     var objectID: String?
+    var postID: String?
     
 }
 

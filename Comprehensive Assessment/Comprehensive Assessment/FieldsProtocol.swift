@@ -17,4 +17,6 @@ protocol RequiredFields {
     var linkToEvent: String? {get }
     
     var objectID: String? {get}
+    
+    var postID: String? {get}
 }

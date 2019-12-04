@@ -73,7 +73,6 @@ class ListVC: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let eventsFromOnline):
-                    print(eventsFromOnline)
                     self.items = eventsFromOnline
                 case .failure(let error):
                     print(error)
@@ -175,6 +174,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
         
         DVC.currentItem = currentItem
+        DVC.accountType = accountType
         
         self.navigationController?.pushViewController(DVC, animated: true)
         

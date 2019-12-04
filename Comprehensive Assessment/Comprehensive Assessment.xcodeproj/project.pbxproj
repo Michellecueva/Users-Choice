@@ -36,6 +36,7 @@
 		28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */; };
 		28FD641F23970042006312F7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641E23970042006312F7 /* DetailVC.swift */; };
 		28FD6421239755A2006312F7 /* FieldsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6420239755A2006312F7 /* FieldsProtocol.swift */; };
+		28FD642323980C7E006312F7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD642223980C7E006312F7 /* Post.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPIClient.swift; sourceTree = "<group>"; };
 		28FD641E23970042006312F7 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		28FD6420239755A2006312F7 /* FieldsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsProtocol.swift; sourceTree = "<group>"; };
+		28FD642223980C7E006312F7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 				28FD640823960FE2006312F7 /* Tickets.swift */,
 				28FD640A23961013006312F7 /* Museum.swift */,
 				28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */,
+				28FD642223980C7E006312F7 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
 				28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */,
 				28FD63FB2395A0F0006312F7 /* TableViewCell.swift in Sources */,
+				28FD642323980C7E006312F7 /* Post.swift in Sources */,
 				28FD64042395B66D006312F7 /* AppUser.swift in Sources */,
 				28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */,
 				28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */,

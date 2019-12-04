@@ -14,6 +14,8 @@ class DetailVC: UIViewController {
     
     var detailItem: ArtObjectDetail!
     
+    var accountType: String!
+    
     
     
     @IBOutlet weak var detailImage: UIImageView!
@@ -23,27 +25,40 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var favoriteButton: UIButton!
     
+    @IBOutlet weak var linkButton: UIButton!
     
     @IBOutlet weak var descriptionBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         titleLabel.text = currentItem.heading
-        loadDataForMuseum()
+        loadData()
         loadImage()
-
+        linkButton.isHidden = accountType != APINames.ticketmaster.rawValue
+        
     }
     
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+                
     }
     
     
     @IBAction func getTicketsButtonPressed(_ sender: UIButton) {
-        //if you are on ticketMaster account make this visiible and direct to link
+       guard let linkEvent = currentItem.linkToEvent else {return}
+        let url = URL(string: linkEvent)
+        guard let urlLink = url else {return}
+        UIApplication.shared.open(urlLink, options:[:], completionHandler: nil)
+
     }
     
+    private func loadData() {
+        if accountType == APINames.ticketmaster.rawValue {
+            loadDataForTickerts()
+        } else {
+            loadDataForMuseum()
+        }
+    }
     
     private func loadDataForMuseum() {
         guard let id = currentItem.objectID else {
@@ -64,6 +79,16 @@ class DetailVC: UIViewController {
             }
 
         }
+    }
+    
+    private func loadDataForTickerts() {
+        guard let priceRange = currentItem.price else {return}
+        
+        self.descriptionBox.text = """
+        Price: \(priceRange)
+        
+        When: \(currentItem.subheading)
+        """
     }
     
     private func loadImage() {
