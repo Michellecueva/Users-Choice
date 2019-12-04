@@ -10,6 +10,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    var delegate: CellDelegate?
+    
     var nameLabel: UILabel = {
         let label = UILabel()
         return label
@@ -25,9 +27,10 @@ class TableViewCell: UITableViewCell {
         return imageView
     }()
     
-    var favoriteButton: UIButton = {
+    lazy var favoriteButton: UIButton = { [unowned self] in
         let button = UIButton()
         button.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+        button.addTarget(self, action: #selector(favoriteButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -52,6 +55,10 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @objc func favoriteButtonPressed(sender: UIButton)  {
+        delegate?.addToFavorites(tag: sender.tag)
     }
     
     private func addSubviews() {

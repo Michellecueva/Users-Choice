@@ -145,6 +145,9 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.eventTimeLabel.text = currentItem.subheading
         
+        cell.favoriteButton.tag = indexPath.row
+        cell.delegate = self
+        
         
         
         ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
@@ -203,4 +206,12 @@ extension ListVC : UISearchBarDelegate {
         }
         
     }
+}
+
+extension ListVC: CellDelegate {
+    func addToFavorites(tag: Int) {
+        print("hey")
+    }
+    
+    
 }
