@@ -18,38 +18,6 @@
             endingLineNumber = "145"
             landmarkName = "handleCreateAccountResponse(result:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FD8C36F5-E1BA-477E-98A4-26429A9B3CB1 - 81caebe363584408"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comprehensive_Assessment.SignUpVC.(handleCreateAccountResponse in _4FCE5BF6189B112DCEB4B5B058C0FEB0)(result: Swift.Result&lt;__C.FIRUser, Swift.Error&gt;) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  uuid = "FD8C36F5-E1BA-477E-98A4-26429A9B3CB1 - b0d17efb676136cf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Comprehensive_Assessment.SignUpVC.(handleCreateAccountResponse in _4FCE5BF6189B112DCEB4B5B058C0FEB0)(result: Swift.Result&lt;__C.FIRUser, Swift.Error&gt;) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "142">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,8 +46,8 @@
                   urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
                   offsetFromSymbolStart = "263">
                </Location>
                <Location
@@ -93,8 +61,8 @@
                   urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
                   offsetFromSymbolStart = "101">
                </Location>
             </Locations>
@@ -114,38 +82,6 @@
             endingLineNumber = "159"
             landmarkName = "handleCreatedUserInFirestoreResponse(result:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "005AE10C-469B-4615-85E3-8EE4A79B37AC - c38687ba6294585f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comprehensive_Assessment.SignUpVC.(handleCreatedUserInFirestoreResponse in _4FCE5BF6189B112DCEB4B5B058C0FEB0)(result: Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "160"
-                  endingLineNumber = "160"
-                  offsetFromSymbolStart = "279">
-               </Location>
-               <Location
-                  uuid = "005AE10C-469B-4615-85E3-8EE4A79B37AC - c38687ba6294585f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comprehensive_Assessment.SignUpVC.(handleCreatedUserInFirestoreResponse in _4FCE5BF6189B112DCEB4B5B058C0FEB0)(result: Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/SignUpVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "160"
-                  endingLineNumber = "160"
-                  offsetFromSymbolStart = "293">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,40 +96,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "createAppUser(user:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8857A67B-1C61-41BE-AA60-50B040AB565D - 6ab6a835532994ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Comprehensive_Assessment.FirestoreService.createAppUser(user: Comprehensive_Assessment.AppUser, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Firebase/FirestoreService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "397">
-               </Location>
-               <Location
-                  uuid = "8857A67B-1C61-41BE-AA60-50B040AB565D - 8f711a7b68065784"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Comprehensive_Assessment.FirestoreService.createAppUser(user: Comprehensive_Assessment.AppUser, completion: (Swift.Result&lt;(), Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Firebase/FirestoreService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "119">
-               </Location>
-            </Locations>
+            landmarkName = "FirestoreService"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -225,6 +129,102 @@
             startingLineNumber = "260"
             endingLineNumber = "260"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21B52837-64C1-4F9B-8E1A-EACEA97475A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B13F68C-DE85-4850-A005-6B9F3A7BB1AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B13F68C-DE85-4850-A005-6B9F3A7BB1AB - b1454cbd78edc86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comprehensive_Assessment.ListVC.searchBarSearchButtonClicked(__C.UISearchBar) -&gt; ()"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "581">
+               </Location>
+               <Location
+                  uuid = "4B13F68C-DE85-4850-A005-6B9F3A7BB1AB - e0a2ce5aa7061b73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;__C.CLPlacemark&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Comprehensive_Assessment.ListVC.searchBarSearchButtonClicked(__C.UISearchBar) -&gt; ()"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "195"
+                  endingLineNumber = "195"
+                  offsetFromSymbolStart = "189">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A22825E-4EC5-4F2D-A026-6EFE0AE6C14E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C2E8930-840B-48BA-894A-03C88F17C635"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -17,7 +17,9 @@ struct TicketsAPIClient {
 
     
     private func  getTicketsURL(city:String, state: String) -> URL {
-        guard let url = URL(string: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=\(Secrets.ticketAPIKey)&city=\(city)&stateCode=\(state)") else {fatalError("Error: Invalid URL")}
+        let fixedStr = city.replacingOccurrences(of: " ", with: "%20")
+        guard let url = URL(string: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=\(Secrets.ticketAPIKey)&city=\(fixedStr)&stateCode=\(state)") else {fatalError("Error: Invalid URL")}
+        print(url)
      return url
 }
     

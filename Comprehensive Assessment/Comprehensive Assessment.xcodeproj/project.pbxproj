@@ -35,6 +35,7 @@
 		28FD641B2396ED8F006312F7 /* ArtObjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */; };
 		28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */; };
 		28FD641F23970042006312F7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641E23970042006312F7 /* DetailVC.swift */; };
+		28FD6421239755A2006312F7 /* FieldsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6420239755A2006312F7 /* FieldsProtocol.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectDetail.swift; sourceTree = "<group>"; };
 		28FD641C2396FB9D006312F7 /* DetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPIClient.swift; sourceTree = "<group>"; };
 		28FD641E23970042006312F7 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		28FD6420239755A2006312F7 /* FieldsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsProtocol.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				28FD64062395C56F006312F7 /* StringExtensions.swift */,
+				28FD6420239755A2006312F7 /* FieldsProtocol.swift */,
 				28FD641923961B1B006312F7 /* Secrets */,
 				28FD63F7239577D0006312F7 /* Controllers */,
 				28FD63F8239577F4006312F7 /* Views */,
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD6421239755A2006312F7 /* FieldsProtocol.swift in Sources */,
 				28FD641B2396ED8F006312F7 /* ArtObjectDetail.swift in Sources */,
 				28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */,
 				28FD641823961B10006312F7 /* Secrets.swift in Sources */,

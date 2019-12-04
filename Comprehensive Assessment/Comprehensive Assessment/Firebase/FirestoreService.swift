@@ -14,6 +14,10 @@ fileprivate enum FireStoreCollections: String {
     case posts
 }
 
+enum FireBaseServiceError: Error {
+    case unAuthorizedUser
+}
+
 
 class FirestoreService {
     static let manager = FirestoreService()
@@ -33,7 +37,27 @@ class FirestoreService {
         }
     }
  
-    
+    func getAccountType(completion: @escaping (Result<Any, Error>) -> ()) {
+        guard let user = FirebaseAuthService.manager.currentUser else {
+            fatalError()
+        }
+        
+        let docRef = db.collection(FireStoreCollections.users.rawValue).document(user.uid)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                guard let account = document["accountType"] else {
+                    return
+                }
+                completion(.success(account))
+            } else {
+                  if let error = error {
+                      completion(.failure(error))
+                      print(error)
+                  }
+            }
+        }
+
+    }
     //MARK: Posts
     
 //    func createPost(post: Post, completion: @escaping (Result<(), Error>) -> ()) {

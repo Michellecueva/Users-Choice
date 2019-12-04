@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import CoreLocation
 
 enum DataLocation {
     case fromSearch
@@ -17,8 +18,15 @@ enum DataLocation {
 class ListVC: UIViewController {
     
     var dataLocation: DataLocation! = .fromSearch
+    var accountType: String! {
+        didSet {
+            let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter city" : "Enter name"
+            
+            searchBar.placeholder = placeholder
+        }
+    }
     
-    var items = [ArtObject]() {
+    var items = [RequiredFields]() {
         didSet {
             listTableView.reloadData()
         }
@@ -46,7 +54,16 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         searchBar.delegate = self
-        
+        let fireService = FirestoreService()
+        fireService.getAccountType() { [weak self] (result) in
+            switch result {
+            case .success(let typeFromDatabase):
+                self!.accountType = typeFromDatabase as? String
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
     
     //MARK: Private Functions
@@ -57,7 +74,7 @@ class ListVC: UIViewController {
                 switch result {
                 case .success(let eventsFromOnline):
                     print(eventsFromOnline)
-                    //self.items = eventsFromOnline
+                    self.items = eventsFromOnline
                 case .failure(let error):
                     print(error)
                 }
@@ -77,6 +94,7 @@ class ListVC: UIViewController {
             }
         }
     }
+    
     
     //MARK: UI Setup
     
@@ -105,12 +123,12 @@ class ListVC: UIViewController {
         
         listTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-             listTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-             listTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-             listTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-             listTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            listTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            listTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            listTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            listTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-       
+        
     }
     
 }
@@ -124,23 +142,22 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         let cell = listTableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! TableViewCell
         
         let currentItem = items[indexPath.row]
-        cell.nameLabel.text = currentItem.title
+        cell.nameLabel.text = currentItem.heading
         
-        cell.eventTimeLabel.text = currentItem.principalOrFirstMaker
+        cell.eventTimeLabel.text = currentItem.subheading
         
         
         
-        ImageHelper.shared.getImage(urlStr: currentItem.webImage.url) { (result) in
+        ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
             
             switch result {
             case .success(let imageFromOnline):
                 DispatchQueue.main.async {
-                    self.imageRetrieved = imageFromOnline
                     cell.listImageView.image = imageFromOnline
                 }
             case .failure(let error):
                 print(error)
-                 cell.listImageView.image = UIImage(named: "noImage")
+                cell.listImageView.image = UIImage(named: "noImage")
             }
         }
         return cell
@@ -158,16 +175,32 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
         
         DVC.currentItem = currentItem
-        DVC.imageRetrieved = imageRetrieved
         
         self.navigationController?.pushViewController(DVC, animated: true)
         
-
+        
     }
 }
 
 extension ListVC : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        loadDataFromMuseum(maker: searchBar.text ?? "")
+        guard let text = searchBar.text else {return}
+        
+        if accountType == APINames.ticketmaster.rawValue {
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString(text) {
+                placemarks, error in
+                let placemark = placemarks?.first
+                guard let city = placemark?.locality else {return}
+                guard let state = placemark?.administrativeArea else {return}
+                print(city)
+                print(state)
+                self.loadDataFromTickets(city:city, state: state)
+                
+            }
+        } else {
+            loadDataFromMuseum(maker: text)
+        }
+        
     }
 }

@@ -10,11 +10,9 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    var currentItem: ArtObject!
+    var currentItem: RequiredFields!
     
     var detailItem: ArtObjectDetail!
-    
-    var imageRetrieved: UIImage!
     
     
     
@@ -30,9 +28,10 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailImage.image = imageRetrieved
-        titleLabel.text = currentItem.title
-        loadData()
+       
+        titleLabel.text = currentItem.heading
+        loadDataForMuseum()
+        loadImage()
 
     }
     
@@ -46,8 +45,12 @@ class DetailVC: UIViewController {
     }
     
     
-    private func loadData() {
-        DetailAPIClient.manager.getDetailObjects(objectNumber: currentItem.objectNumber) { (result) in
+    private func loadDataForMuseum() {
+        guard let id = currentItem.objectID else {
+            print("no ID")
+            return
+        }
+        DetailAPIClient.manager.getDetailObjects(objectNumber: id) { (result) in
             
             DispatchQueue.main.async {
                 switch result {
@@ -61,6 +64,22 @@ class DetailVC: UIViewController {
             }
 
         }
+    }
+    
+    private func loadImage() {
+        
+               ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
+                   
+                   switch result {
+                   case .success(let imageFromOnline):
+                       DispatchQueue.main.async {
+                        self.detailImage.image = imageFromOnline
+                       }
+                   case .failure(let error):
+                       print(error)
+                       self.detailImage.image = UIImage(named: "noImage")
+                   }
+               }
     }
 
     

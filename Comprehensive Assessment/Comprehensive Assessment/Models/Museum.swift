@@ -17,11 +17,31 @@ struct MuseumWrapper: Codable {
           }
 }
 
-struct ArtObject: Codable {
-    let objectNumber: String
-    let title: String
-    let principalOrFirstMaker: String
-    let webImage: WebImage
+struct ArtObject: Codable, RequiredFields {
+    private let objectNumber: String
+    private let title: String
+    private let principalOrFirstMaker: String
+    private let webImage: WebImage
+    
+    var imageUrl: String {
+        return webImage.url
+    }
+      
+    var heading: String {
+        return title
+    }
+      
+    var subheading: String {
+        return principalOrFirstMaker
+    }
+      
+    var price: String?
+      
+    var linkToEvent: String?
+    
+    var objectID: String? {
+        return objectNumber
+    }
     
 }
 

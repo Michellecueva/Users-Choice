@@ -146,7 +146,7 @@ class SignUpVC: UIViewController {
            DispatchQueue.main.async { [weak self] in
                switch result {
                case .success(let user):
-                // figure out how to get the info from picker view
+                
                 FirestoreService.manager.createAppUser(user: AppUser(from: user, accountType: self?.accountType)) { [weak self] (result) in
                        self?.handleCreatedUserInFirestoreResponse(result: result)
                    }
