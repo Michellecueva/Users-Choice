@@ -33,6 +33,8 @@ class ListVC: UIViewController {
         }
     }
     
+    var favorites: [RequiredFields]!
+    
     var imageRetrieved: UIImage!
     
     lazy var searchBar: UISearchBar = {
@@ -68,9 +70,7 @@ class ListVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if dataLocation == .fromFavorites {
-            getFavoritesForThisUser()
-        }
+        getFavoritesForThisUser()
     }
     
     //MARK: Private Functions
@@ -111,7 +111,12 @@ class ListVC: UIViewController {
             FirestoreService.manager.getFavorites(forUserID: id) { (result) in
                 switch result {
                 case .success(let favorites):
-                    self?.items = favorites
+                    if self?.dataLocation == .fromFavorites {
+                         self?.items = favorites
+                    } else {
+                        self?.favorites = favorites
+                    }
+                   
                 case .failure(let error):
                     print(":( \(error)")
                 }
@@ -173,6 +178,12 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         cell.favoriteButton.tag = indexPath.row
         cell.delegate = self
         
+//        
+//        
+//        if favorites.contains(where: {$0 == currentItem}) {
+//            cell.favoriteButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+//        }
+//        
         
         
         ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
@@ -203,6 +214,8 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         
         DVC.currentItem = currentItem
         DVC.accountType = accountType
+        
+        print(currentItem.heading)
         
         self.navigationController?.pushViewController(DVC, animated: true)
         
@@ -240,7 +253,7 @@ extension ListVC: CellDelegate {
         
         guard let user = FirebaseAuthService.manager.currentUser else {return}
         
-        let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid)
+        let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
         
         FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
             switch result {

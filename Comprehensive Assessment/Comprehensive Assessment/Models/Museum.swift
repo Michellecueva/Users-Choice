@@ -18,8 +18,8 @@ struct MuseumWrapper: Codable {
 }
 
 struct ArtObject: Codable, RequiredFields {
-  
-    
+
+    private let id: String
     private let objectNumber: String
     private let title: String
     private let principalOrFirstMaker: String
@@ -36,6 +36,10 @@ struct ArtObject: Codable, RequiredFields {
     var subheading: String {
         return principalOrFirstMaker
     }
+    
+    var uniqueItemID: String {
+        return id
+    }
       
     var price: String?
       
@@ -45,6 +49,7 @@ struct ArtObject: Codable, RequiredFields {
         return objectNumber
     }
     
+   
       var favoriteID: String?
     
 }

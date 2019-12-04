@@ -12,6 +12,7 @@ protocol RequiredFields {
     var imageUrl: String {get}
     var heading: String {get }
     var subheading: String {get }
+    var uniqueItemID: String {get}
     
     var price: String? {get}
     var linkToEvent: String? {get }
