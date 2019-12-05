@@ -119,7 +119,7 @@ class DetailVC: UIViewController {
                         self.detailImage.image = UIImage(named: "noImage")
                     }
                     
-                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
                     self.detailImage.backgroundColor = .clear
                 }
                    

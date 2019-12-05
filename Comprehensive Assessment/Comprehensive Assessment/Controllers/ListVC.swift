@@ -133,21 +133,13 @@ class ListVC: UIViewController {
     
     private func setSubviews() {
         if dataLocation == .fromSearch {
-            setSubviewsForSearchVC()
-        } else {
-            setSubviewsForFavVC()
+            self.view.addSubview(searchBar)
         }
+        
+         self.view.addSubview(listTableView)
     }
     
-    private func setSubviewsForSearchVC() {
-        self.view.addSubview(searchBar)
-        self.view.addSubview(listTableView)
-    }
-    
-    private func setSubviewsForFavVC() {
-        self.view.addSubview(listTableView)
-    }
-    
+
     private func setConstraints() {
         if dataLocation == .fromSearch {
             setConstraintsForSearchVC()
@@ -222,16 +214,20 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         cell.favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
         
         ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
-            
-            switch result {
-            case .success(let imageFromOnline):
-                DispatchQueue.main.async {
-                    cell.listImageView.image = imageFromOnline
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let imageFromOnline):
+                    DispatchQueue.main.async {
+                        cell.listImageView.image = imageFromOnline
+                    }
+                case .failure(let error):
+                    print(error)
+                    cell.listImageView.image = UIImage(named: "noImage")
                 }
-            case .failure(let error):
-                print(error)
-                cell.listImageView.image = UIImage(named: "noImage")
+                
+                cell.activityIndicator.stopAnimating()
             }
+            
         }
         return cell
     }

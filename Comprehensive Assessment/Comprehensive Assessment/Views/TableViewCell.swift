@@ -34,6 +34,12 @@ class TableViewCell: UITableViewCell {
         return button
     }()
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+          let indicator = UIActivityIndicatorView()
+          indicator.startAnimating()
+          return indicator
+      }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
@@ -66,6 +72,7 @@ class TableViewCell: UITableViewCell {
         self.contentView.addSubview(self.eventTimeLabel)
         self.contentView.addSubview(self.listImageView)
         self.contentView.addSubview(self.favoriteButton)
+        self.contentView.addSubview(self.activityIndicator)
     }
     
     private func setConstraints() {
@@ -73,6 +80,7 @@ class TableViewCell: UITableViewCell {
         self.eventTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.listImageView.translatesAutoresizingMaskIntoConstraints = false
         self.favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             listImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
@@ -91,7 +99,10 @@ class TableViewCell: UITableViewCell {
             favoriteButton.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             favoriteButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             favoriteButton.heightAnchor.constraint(equalToConstant: 50),
-            favoriteButton.widthAnchor.constraint(equalToConstant: 50)
+            favoriteButton.widthAnchor.constraint(equalToConstant: 50),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: listImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: listImageView.centerYAnchor)
         ])
     }
 
