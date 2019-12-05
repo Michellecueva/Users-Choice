@@ -49,7 +49,7 @@ struct Event: Codable, RequiredFields {
     
     var price: String? {
         guard let price = priceRanges else {return "Price information not available"}
-        return "$\(price[0].min)-\(price[0].max)"
+        return "$\(price[0].min) - $\(price[0].max)"
     }
     
     var linkToEvent: String? {
@@ -73,8 +73,6 @@ struct DateOfEvent: Codable {
 }
 
 struct Start: Codable {
-//    let localDate: String
-//    let localTime: String
     let dateTime: String
 }
 

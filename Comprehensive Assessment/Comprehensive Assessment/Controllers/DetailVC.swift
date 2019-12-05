@@ -73,8 +73,17 @@ class DetailVC: UIViewController {
                 switch result {
                 case .success(let detailsFromOnline):
                     
-                    // remember to account for the fact that some museum items dont have plaque or place of prodction
-                    self.descriptionBox.text = detailsFromOnline.plaqueDescriptionEnglish
+                    let productionPlaceArr = detailsFromOnline.productionPlaces
+                    
+                    let productionPlace = productionPlaceArr.count != 0 ? productionPlaceArr[0] : "Not avaiable"
+            
+                    self.descriptionBox.text = """
+                    Date Created: \(detailsFromOnline.dating.presentingDate)
+                    
+                    Place of Production: \(productionPlace)
+                    
+                    \(String(detailsFromOnline.plaqueDescriptionEnglish ?? "No description in English available"))
+                    """
                 case .failure(let error):
                     print(error)
                 }
