@@ -24,6 +24,7 @@ class TableViewCell: UITableViewCell {
     
     var listImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
