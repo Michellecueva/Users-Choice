@@ -28,23 +28,6 @@ class FirebaseAuthService {
         }
     }
     
-//    func updateUserFields(accountType: String? = nil, completion: @escaping (Result<(),Error>) -> ()){
-//        let changeRequest = auth.currentUser?.createProfileChangeRequest()
-//        if let accountType = accountType {
-//            // update account with the account type
-//        }
-//        
-//        
-//        
-//        changeRequest?.commitChanges(completion: { (error) in
-//            if let error = error {
-//                completion(.failure(error))
-//            } else {
-//                completion(.success(()))
-//            }
-//        })
-//    }
-    
     func loginUser(email: String, password: String, completion: @escaping (Result<(), Error>) -> ()) {
         auth.signIn(withEmail: email, password: password) { (result, error) in
             if (result?.user) != nil {

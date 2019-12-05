@@ -40,7 +40,11 @@ struct Event: Codable, RequiredFields {
     
     var subheading: String {
         guard let dates = dates else {return "No date found"}
-        return "On \(dates.start.localDate) at  \(dates.start.localTime)"
+        
+        let stringToFormat = dates.start.dateTime
+        
+        return stringToFormat.dateFormatForString
+
     }
     
     var price: String? {

@@ -33,7 +33,7 @@ class ListVC: UIViewController {
         }
     }
     
-    var favorites = [RequiredFields]() {
+    var favorites = [Favorite]() {
         didSet {
              listTableView.reloadData()
         }
@@ -79,8 +79,8 @@ class ListVC: UIViewController {
     
     //MARK: Private Functions
     
-    private func loadDataFromTickets(city: String, state: String) {
-        TicketsAPIClient.manager.getTickets(city: city, state: state) { (result) in
+    private func loadDataFromTickets(city: String) {
+        TicketsAPIClient.manager.getTickets(city: city) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let eventsFromOnline):
@@ -268,10 +268,8 @@ extension ListVC : UISearchBarDelegate {
                 placemarks, error in
                 let placemark = placemarks?.first
                 guard let city = placemark?.locality else {return}
-                guard let state = placemark?.administrativeArea else {return}
                 print(city)
-                print(state)
-                self.loadDataFromTickets(city:city, state: state)
+                self.loadDataFromTickets(city:city)
                 
             }
         } else {
@@ -294,7 +292,7 @@ extension ListVC: CellDelegate {
                 print("Favorite Item Not Found")
                 return
             }
-            FirestoreService.manager.removeFavorite(favorite: favoriteItem as! Favorite) { (result) in
+            FirestoreService.manager.removeFavorite(favorite: favoriteItem) { (result) in
                 switch result {
                 case .success():
                     self.getFavoritesForThisUser()

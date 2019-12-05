@@ -16,6 +16,8 @@ class DetailVC: UIViewController {
     
     var accountType: String!
     
+    var favorites: [Favorite]!
+    
     
     
     @IBOutlet weak var detailImage: UIImageView!
