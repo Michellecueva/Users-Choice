@@ -134,15 +134,14 @@
 		28FD63C923956AB5006312F7 /* Comprehensive Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				28FD64062395C56F006312F7 /* StringExtensions.swift */,
-				28FD6420239755A2006312F7 /* FieldsProtocol.swift */,
-				28FD64242398125A006312F7 /* CellDelegate.swift */,
+				28FD64282398C9F4006312F7 /* Protocols */,
 				28FD641923961B1B006312F7 /* Secrets */,
 				28FD63F7239577D0006312F7 /* Controllers */,
 				28FD63F8239577F4006312F7 /* Views */,
 				28FD64052395B676006312F7 /* Models */,
 				28FD63FE2395B592006312F7 /* Firebase */,
 				28FD640E239610FD006312F7 /* Networking */,
+				28FD64292398CA0D006312F7 /* Extensions */,
 				28FD63F923957818006312F7 /* Supporting Files */,
 				28FD63DB23956AB8006312F7 /* Info.plist */,
 				28FD63E123957261006312F7 /* GoogleService-Info.plist */,
@@ -232,6 +231,23 @@
 				28FD641723961B10006312F7 /* Secrets.swift */,
 			);
 			path = Secrets;
+			sourceTree = "<group>";
+		};
+		28FD64282398C9F4006312F7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				28FD6420239755A2006312F7 /* FieldsProtocol.swift */,
+				28FD64242398125A006312F7 /* CellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		28FD64292398CA0D006312F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28FD64062395C56F006312F7 /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABAF43443401320B2CDC84E1 /* Pods */ = {

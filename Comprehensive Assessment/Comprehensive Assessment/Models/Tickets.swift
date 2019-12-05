@@ -73,8 +73,8 @@ struct DateOfEvent: Codable {
 }
 
 struct Start: Codable {
-    let localDate: String
-    let localTime: String
+//    let localDate: String
+//    let localTime: String
     let dateTime: String
 }
 
