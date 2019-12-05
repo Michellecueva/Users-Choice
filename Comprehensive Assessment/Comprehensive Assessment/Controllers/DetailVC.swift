@@ -47,6 +47,36 @@ class DetailVC: UIViewController {
     
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        
+        guard let user = FirebaseAuthService.manager.currentUser else {return}
+              let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
+              
+              if isFavorited {
+                  guard let favoriteItem = favorites.filter({$0.uniqueItemID == currentItem.uniqueItemID}).first else {
+                      print("Favorite Item Not Found")
+                      return
+                  }
+                  FirestoreService.manager.removeFavorite(favorite: favoriteItem) { (result) in
+                      switch result {
+                      case .success():
+                        self.favoriteButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+                          //self.getFavoritesForThisUser()
+                        
+                      case .failure(let error):
+                          print("handleFavorites: Error Happened \(error)")
+                      }
+                  }
+              } else {
+                  let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
+                  FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
+                      switch result {
+                      case .success():
+                          self.favoriteButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+                      case .failure(let error):
+                          print(error)
+                      }
+                  }
+              }
                 
     }
     
@@ -61,7 +91,7 @@ class DetailVC: UIViewController {
     
     private func loadData() {
         if accountType == APINames.ticketmaster.rawValue {
-            loadDataForTickerts()
+            loadDataForTickets()
         } else {
             loadDataForMuseum()
         }
@@ -97,7 +127,7 @@ class DetailVC: UIViewController {
         }
     }
     
-    private func loadDataForTickerts() {
+    private func loadDataForTickets() {
         guard let priceRange = currentItem.price else {return}
         
         self.descriptionBox.text = """
@@ -126,6 +156,27 @@ class DetailVC: UIViewController {
                 }
                    
                }
+    }
+    
+    private func getFavoritesForThisUser() {
+        
+        guard  let id =  FirebaseAuthService.manager.currentUser?.uid else {
+            print("userID not found")
+            return
+        }
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            FirestoreService.manager.getFavorites(forUserID: id) { (result) in
+                switch result {
+                case .success(let favorites):
+        
+                    self?.favorites = favorites
+                    
+                    
+                case .failure(let error):
+                    print(":( \(error)")
+                }
+            }
+        }
     }
 
     
