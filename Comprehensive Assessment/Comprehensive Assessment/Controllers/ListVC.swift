@@ -35,7 +35,7 @@ class ListVC: UIViewController {
     
     var favorites = [Favorite]() {
         didSet {
-             listTableView.reloadData()
+            listTableView.reloadData()
         }
     }
     
@@ -136,10 +136,10 @@ class ListVC: UIViewController {
             self.view.addSubview(searchBar)
         }
         
-         self.view.addSubview(listTableView)
+        self.view.addSubview(listTableView)
     }
     
-
+    
     private func setConstraints() {
         if dataLocation == .fromSearch {
             setConstraintsForSearchVC()
@@ -208,7 +208,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.favoriteButton.tag = indexPath.row
         cell.delegate = self
-
+        
         let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
         let buttonImage = isFavorited ? "heart.fill" : "heart"
         cell.favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
@@ -237,19 +237,21 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentItem = items[indexPath.row]
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
-        
-        DVC.currentItem = currentItem
-        DVC.accountType = accountType
-        
-        print(currentItem.heading)
-        
-        self.navigationController?.pushViewController(DVC, animated: true)
-        
+        if self.dataLocation == .fromSearch {
+            
+            let currentItem = items[indexPath.row]
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
+            
+            DVC.currentItem = currentItem
+            DVC.accountType = accountType
+            DVC.favorites = favorites
+            
+            self.navigationController?.pushViewController(DVC, animated: true)
+        }
         
     }
 }
@@ -279,7 +281,7 @@ extension ListVC: CellDelegate {
     
     func handleFavorites(tag: Int) {
         let currentItem = items[tag]
-
+        
         guard let user = FirebaseAuthService.manager.currentUser else {return}
         let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
         
@@ -307,7 +309,7 @@ extension ListVC: CellDelegate {
                 }
             }
         }
-               
+        
     }
     
     

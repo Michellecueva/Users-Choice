@@ -40,7 +40,9 @@ class DetailVC: UIViewController {
         loadData()
         loadImage()
         linkButton.isHidden = accountType != APINames.ticketmaster.rawValue
-        
+        let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
+        let buttonImage = isFavorited ? "heart.fill" : "heart"
+        favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
     }
     
     
