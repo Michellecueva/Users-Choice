@@ -9,6 +9,6 @@
 import Foundation
 
 protocol CellDelegate: AnyObject {
-    func addToFavorites(tag: Int)
+    func handleFavorites(tag: Int)
 }
 

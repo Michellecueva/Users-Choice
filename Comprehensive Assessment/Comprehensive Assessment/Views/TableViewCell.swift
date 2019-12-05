@@ -58,14 +58,7 @@ class TableViewCell: UITableViewCell {
     }
     
     @objc func favoriteButtonPressed(sender: UIButton)  {
-        delegate?.addToFavorites(tag: sender.tag)
-//        let unfavorited = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular))
-//        let favorited = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular))
-//        
-//        let  imageForButton = favoriteButton.image(for: .normal) == unfavorited ? favorited : unfavorited
-//        
-//        favoriteButton.setImage(imageForButton, for: .normal)
-        
+        delegate?.handleFavorites(tag: sender.tag)        
     }
     
     private func addSubviews() {

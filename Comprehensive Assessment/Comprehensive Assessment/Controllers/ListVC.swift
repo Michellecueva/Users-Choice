@@ -16,7 +16,7 @@ enum DataLocation {
 }
 
 class ListVC: UIViewController {
-
+    
     
     var dataLocation: DataLocation! = .fromSearch
     var accountType: String! {
@@ -33,7 +33,11 @@ class ListVC: UIViewController {
         }
     }
     
-    var favorites: [RequiredFields]!
+    var favorites = [RequiredFields]() {
+        didSet {
+             listTableView.reloadData()
+        }
+    }
     
     var imageRetrieved: UIImage!
     
@@ -112,11 +116,11 @@ class ListVC: UIViewController {
                 switch result {
                 case .success(let favorites):
                     if self?.dataLocation == .fromFavorites {
-                         self?.items = favorites
-                    } else {
-                        self?.favorites = favorites
+                        self?.items = favorites
                     }
-                   
+                    self?.favorites = favorites
+                    
+                    
                 case .failure(let error):
                     print(":( \(error)")
                 }
@@ -128,15 +132,40 @@ class ListVC: UIViewController {
     //MARK: UI Setup
     
     private func setSubviews() {
+        if dataLocation == .fromSearch {
+            setSubviewsForSearchVC()
+        } else {
+            setSubviewsForFavVC()
+        }
+    }
+    
+    private func setSubviewsForSearchVC() {
         self.view.addSubview(searchBar)
         self.view.addSubview(listTableView)
     }
     
+    private func setSubviewsForFavVC() {
+        self.view.addSubview(listTableView)
+    }
+    
     private func setConstraints() {
+        if dataLocation == .fromSearch {
+            setConstraintsForSearchVC()
+        } else {
+            setConstraintsForFavVC()
+        }
+    }
+    
+    private func setConstraintsForSearchVC() {
         setSearchBarConstraints()
         setTableviewConstraints()
         
     }
+    
+    private func setConstraintsForFavVC() {
+        setTableviewConstraintsForFavVC()
+    }
+    
     private func setSearchBarConstraints() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         
@@ -160,6 +189,16 @@ class ListVC: UIViewController {
         
     }
     
+    private func setTableviewConstraintsForFavVC() {
+        listTableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            listTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            listTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            listTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            listTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+    }
+    
 }
 
 extension ListVC: UITableViewDataSource, UITableViewDelegate {
@@ -177,14 +216,10 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.favoriteButton.tag = indexPath.row
         cell.delegate = self
-        
-//        
-//        
-//        if favorites.contains(where: {$0 == currentItem}) {
-//            cell.favoriteButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
-//        }
-//        
-        
+
+        let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
+        let buttonImage = isFavorited ? "heart.fill" : "heart"
+        cell.favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
         
         ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
             
@@ -247,23 +282,38 @@ extension ListVC : UISearchBarDelegate {
 }
 
 extension ListVC: CellDelegate {
-
-    func addToFavorites(tag: Int) {
+    
+    func handleFavorites(tag: Int) {
         let currentItem = items[tag]
-        
+
         guard let user = FirebaseAuthService.manager.currentUser else {return}
+        let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
         
-        let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
-        
-        FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
-            switch result {
-            case .success():
-                print("this worked")
-            case .failure(let error):
-                print(error)
+        if isFavorited {
+            guard let favoriteItem = favorites.filter({$0.uniqueItemID == currentItem.uniqueItemID}).first else {
+                print("Favorite Item Not Found")
+                return
+            }
+            FirestoreService.manager.removeFavorite(favorite: favoriteItem as! Favorite) { (result) in
+                switch result {
+                case .success():
+                    self.getFavoritesForThisUser()
+                case .failure(let error):
+                    print("handleFavorites: Error Happened \(error)")
+                }
+            }
+        } else {
+            let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
+            FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
+                switch result {
+                case .success():
+                    self.getFavoritesForThisUser()
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
-        
+               
     }
     
     

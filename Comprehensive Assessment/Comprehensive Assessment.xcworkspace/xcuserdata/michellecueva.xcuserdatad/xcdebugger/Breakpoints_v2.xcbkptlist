@@ -142,8 +142,8 @@
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
             <Locations>
@@ -206,8 +206,8 @@
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,14 +232,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "54C2E27F-2AE4-42FD-9593-05A2B85F10F5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "ListVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -247,175 +247,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B697319D-C7FA-4371-8E92-02C024285393"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "getFavoritesForThisUser()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B697319D-C7FA-4371-8E92-02C024285393 - 1fa508a07cfb81c1"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Comprehensive_Assessment.ListVC.(getFavoritesForThisUser in _8536338DA52D86CA2784EF5BDCDDAAB9)() -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "B697319D-C7FA-4371-8E92-02C024285393 - fb0791120ffd529b"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Comprehensive_Assessment.Favorite&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Comprehensive_Assessment.ListVC.(getFavoritesForThisUser in _8536338DA52D86CA2784EF5BDCDDAAB9)() -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "172">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7A42B3CD-F868-4039-84EF-96840A8E5869"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "getFavoritesForThisUser()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7A42B3CD-F868-4039-84EF-96840A8E5869 - fb0791120ffd529b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Comprehensive_Assessment.Favorite&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Comprehensive_Assessment.ListVC.(getFavoritesForThisUser in _8536338DA52D86CA2784EF5BDCDDAAB9)() -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "238">
-               </Location>
-               <Location
-                  uuid = "7A42B3CD-F868-4039-84EF-96840A8E5869 - fb0791120ffd529b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Comprehensive_Assessment.Favorite&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in Comprehensive_Assessment.ListVC.(getFavoritesForThisUser in _8536338DA52D86CA2784EF5BDCDDAAB9)() -&gt; ()"
-                  moduleName = "Comprehensive Assessment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "266">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A9F06A79-9956-40D4-A145-3D5E345E266A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "getFavoritesForThisUser()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2350889C-5DA3-4EA8-BC02-C2018FAE122C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "addToFavorites(tag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2AB9AC8D-3AD9-4BEF-A1F7-782F6D5F4931"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "addToFavorites(tag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7751BD09-7475-4EB2-BA59-0FE47801AE55"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "addToFavorites(tag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BBA5FA6F-4B04-43C0-A67B-DF9F8485CACC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "handleFavorites(tag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88529F7B-B4D7-4802-B1BE-6D6CDE6B25C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -423,49 +279,161 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7EC0B86A-5613-42DE-9C6F-918B67F8CFC5"
+            uuid = "1CE57898-51B3-4A04-814C-1081FE7DD9F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "getFavoritesForThisUser()"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "589D1B1F-E67B-44C2-B50D-0BF0D860CB97"
-            shouldBeEnabled = "Yes"
+            uuid = "6D57217B-30F5-4129-8CB7-61571868D94B"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "getFavoritesForThisUser()"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6D57217B-30F5-4129-8CB7-61571868D94B - 4a7f8256003c6344"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comprehensive_Assessment.ListVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "1740">
+               </Location>
+               <Location
+                  uuid = "6D57217B-30F5-4129-8CB7-61571868D94B - 74e7eba2ea674224"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Comprehensive_Assessment.RequiredFields) -&gt; Swift.Bool in Comprehensive_Assessment.ListVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "221"
+                  endingLineNumber = "221"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D5CB844-1AA7-4E75-A187-3DB938FC31D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Firebase/FirestoreService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "getFavorites(forUserID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21FF357D-447F-4FAB-9F3A-B226FD0914D1"
-            shouldBeEnabled = "Yes"
+            uuid = "8A5A267B-369C-42FF-905A-F347F6F53B5D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "getFavoritesForThisUser()"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "handleFavorites(tag:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A5A267B-369C-42FF-905A-F347F6F53B5D - 6c626d9a2a4ddfaf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Comprehensive_Assessment.ListVC.handleFavorites(tag: Swift.Int) -&gt; ()"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "312"
+                  endingLineNumber = "312"
+                  offsetFromSymbolStart = "2812">
+               </Location>
+               <Location
+                  uuid = "8A5A267B-369C-42FF-905A-F347F6F53B5D - 72fb02a0efdc7d2b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (Swift.Result&lt;(), Swift.Error&gt;) -&gt; () in Comprehensive_Assessment.ListVC.handleFavorites(tag: Swift.Int) -&gt; ()"
+                  moduleName = "Comprehensive Assessment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michellecueva/Desktop/Labs/Unit-5/iOS-CTA-MCueva/Comprehensive%20Assessment/Comprehensive%20Assessment/Controllers/ListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "314"
+                  endingLineNumber = "314"
+                  offsetFromSymbolStart = "129">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "367EBBFB-57B7-47DD-9239-586E530E50C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Firebase/FirestoreService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "getFavorites(forUserID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4748607-50EF-47C8-9597-55030005942B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Comprehensive Assessment/Controllers/ListVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "favorites"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

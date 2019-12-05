@@ -71,7 +71,17 @@ class FirestoreService {
                }
            }
        }
-       
+    
+    func removeFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
+        db.collection(FireStoreCollections.favorites.rawValue).document(favorite.id).delete() { err in
+            if let err = err {
+                completion(.failure(err))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+    
     func getFavorites(forUserID: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
         db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
             if let error = error {
