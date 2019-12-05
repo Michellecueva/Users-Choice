@@ -31,6 +31,9 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var descriptionBox: UITextView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = currentItem.heading
@@ -105,16 +108,21 @@ class DetailVC: UIViewController {
     private func loadImage() {
         
                ImageHelper.shared.getImage(urlStr: currentItem.imageUrl) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let imageFromOnline):
+                       
+                         self.detailImage.image = imageFromOnline
+                        
+                    case .failure(let error):
+                        print(error)
+                        self.detailImage.image = UIImage(named: "noImage")
+                    }
+                    
+                    self.activityIndicator.isHidden = true
+                    self.detailImage.backgroundColor = .clear
+                }
                    
-                   switch result {
-                   case .success(let imageFromOnline):
-                       DispatchQueue.main.async {
-                        self.detailImage.image = imageFromOnline
-                       }
-                   case .failure(let error):
-                       print(error)
-                       self.detailImage.image = UIImage(named: "noImage")
-                   }
                }
     }
 
