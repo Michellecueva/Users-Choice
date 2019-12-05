@@ -24,7 +24,6 @@
 		28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63FF2395B5C5006312F7 /* FirestoreService.swift */; };
 		28FD64042395B66D006312F7 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64032395B66D006312F7 /* AppUser.swift */; };
 		28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64062395C56F006312F7 /* StringExtensions.swift */; };
-		28FD640923960FE2006312F7 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640823960FE2006312F7 /* Tickets.swift */; };
 		28FD640B23961013006312F7 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640A23961013006312F7 /* Museum.swift */; };
 		28FD640D239610EF006312F7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640C239610EF006312F7 /* AppError.swift */; };
 		28FD6410239618E9006312F7 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640F239618E9006312F7 /* ImageHelper.swift */; };
@@ -38,6 +37,15 @@
 		28FD6421239755A2006312F7 /* FieldsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6420239755A2006312F7 /* FieldsProtocol.swift */; };
 		28FD64252398125A006312F7 /* CellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64242398125A006312F7 /* CellDelegate.swift */; };
 		28FD642723981F44006312F7 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD642623981F44006312F7 /* Favorite.swift */; };
+		28FD642E2399926B006312F7 /* MuseumSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 28FD642D2399926B006312F7 /* MuseumSample.json */; };
+		28FD643023999290006312F7 /* ArtObjectSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 28FD642F23999290006312F7 /* ArtObjectSample.json */; };
+		28FD6432239992AE006312F7 /* TicketmasterSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 28FD6431239992AE006312F7 /* TicketmasterSample.json */; };
+		28FD64332399955A006312F7 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640823960FE2006312F7 /* Tickets.swift */; };
+		28FD643523999C2E006312F7 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640A23961013006312F7 /* Museum.swift */; };
+		28FD643623999C31006312F7 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD640823960FE2006312F7 /* Tickets.swift */; };
+		28FD643723999C3F006312F7 /* FieldsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6420239755A2006312F7 /* FieldsProtocol.swift */; };
+		28FD643823999C5D006312F7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64062395C56F006312F7 /* StringExtensions.swift */; };
+		28FD643923999CF8006312F7 /* ArtObjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		133D9E31914173DD609D3FD4 /* Pods-Comprehensive AssessmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive AssessmentTests.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive AssessmentTests/Pods-Comprehensive AssessmentTests.release.xcconfig"; sourceTree = "<group>"; };
 		28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comprehensive Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD63CA23956AB5006312F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28FD63CC23956AB5006312F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +96,12 @@
 		28FD6420239755A2006312F7 /* FieldsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsProtocol.swift; sourceTree = "<group>"; };
 		28FD64242398125A006312F7 /* CellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDelegate.swift; sourceTree = "<group>"; };
 		28FD642623981F44006312F7 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		28FD642D2399926B006312F7 /* MuseumSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MuseumSample.json; path = ../../../../../MuseumSample.json; sourceTree = "<group>"; };
+		28FD642F23999290006312F7 /* ArtObjectSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArtObjectSample.json; path = ../../../../../ArtObjectSample.json; sourceTree = "<group>"; };
+		28FD6431239992AE006312F7 /* TicketmasterSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TicketmasterSample.json; path = ../../../../../TicketmasterSample.json; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
+		75780ED465AF18B4873DA35C /* Pods_Comprehensive AssessmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Comprehensive AssessmentTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99A1C775F8D3A03598CA1C58 /* Pods-Comprehensive AssessmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive AssessmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive AssessmentTests/Pods-Comprehensive AssessmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,6 +169,9 @@
 			children = (
 				28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */,
 				28FD63EB23957531006312F7 /* Info.plist */,
+				28FD6431239992AE006312F7 /* TicketmasterSample.json */,
+				28FD642D2399926B006312F7 /* MuseumSample.json */,
+				28FD642F23999290006312F7 /* ArtObjectSample.json */,
 			);
 			path = "Comprehensive AssessmentTests";
 			sourceTree = "<group>";
@@ -255,6 +272,8 @@
 			children = (
 				E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */,
 				6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */,
+				99A1C775F8D3A03598CA1C58 /* Pods-Comprehensive AssessmentTests.debug.xcconfig */,
+				133D9E31914173DD609D3FD4 /* Pods-Comprehensive AssessmentTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -263,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */,
+				75780ED465AF18B4873DA35C /* Pods_Comprehensive AssessmentTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -293,6 +313,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28FD63F023957531006312F7 /* Build configuration list for PBXNativeTarget "Comprehensive AssessmentTests" */;
 			buildPhases = (
+				C7F341EC8B2D12F0562D1884 /* [CP] Check Pods Manifest.lock */,
 				28FD63E323957530006312F7 /* Sources */,
 				28FD63E423957530006312F7 /* Frameworks */,
 				28FD63E523957530006312F7 /* Resources */,
@@ -361,6 +382,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD643023999290006312F7 /* ArtObjectSample.json in Resources */,
+				28FD642E2399926B006312F7 /* MuseumSample.json in Resources */,
+				28FD6432239992AE006312F7 /* TicketmasterSample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +430,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C7F341EC8B2D12F0562D1884 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Comprehensive AssessmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -414,10 +460,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FD6421239755A2006312F7 /* FieldsProtocol.swift in Sources */,
+				28FD64332399955A006312F7 /* Tickets.swift in Sources */,
 				28FD641B2396ED8F006312F7 /* ArtObjectDetail.swift in Sources */,
 				28FD64072395C56F006312F7 /* StringExtensions.swift in Sources */,
 				28FD641823961B10006312F7 /* Secrets.swift in Sources */,
-				28FD640923960FE2006312F7 /* Tickets.swift in Sources */,
 				28FD640D239610EF006312F7 /* AppError.swift in Sources */,
 				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
 				28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */,
@@ -446,7 +492,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FD643723999C3F006312F7 /* FieldsProtocol.swift in Sources */,
 				28FD63EA23957531006312F7 /* Comprehensive_AssessmentTests.swift in Sources */,
+				28FD643823999C5D006312F7 /* StringExtensions.swift in Sources */,
+				28FD643923999CF8006312F7 /* ArtObjectDetail.swift in Sources */,
+				28FD643623999C31006312F7 /* Tickets.swift in Sources */,
+				28FD643523999C2E006312F7 /* Museum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,14 +683,17 @@
 		};
 		28FD63EE23957531006312F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99A1C775F8D3A03598CA1C58 /* Pods-Comprehensive AssessmentTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
 				INFOPLIST_FILE = "Comprehensive AssessmentTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Michelle.Comprehensive-AssessmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -651,14 +705,17 @@
 		};
 		28FD63EF23957531006312F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133D9E31914173DD609D3FD4 /* Pods-Comprehensive AssessmentTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Firebase/Core/Sources";
 				INFOPLIST_FILE = "Comprehensive AssessmentTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Michelle.Comprehensive-AssessmentTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
