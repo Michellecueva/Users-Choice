@@ -46,6 +46,8 @@
 		28FD643723999C3F006312F7 /* FieldsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD6420239755A2006312F7 /* FieldsProtocol.swift */; };
 		28FD643823999C5D006312F7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD64062395C56F006312F7 /* StringExtensions.swift */; };
 		28FD643923999CF8006312F7 /* ArtObjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */; };
+		28FD643B2399E82D006312F7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD643A2399E82D006312F7 /* SettingsVC.swift */; };
+		28FD643D2399EBC0006312F7 /* accountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD643C2399EBC0006312F7 /* accountType.swift */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		28FD642D2399926B006312F7 /* MuseumSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MuseumSample.json; path = ../../../../../MuseumSample.json; sourceTree = "<group>"; };
 		28FD642F23999290006312F7 /* ArtObjectSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ArtObjectSample.json; path = ../../../../../ArtObjectSample.json; sourceTree = "<group>"; };
 		28FD6431239992AE006312F7 /* TicketmasterSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TicketmasterSample.json; path = ../../../../../TicketmasterSample.json; sourceTree = "<group>"; };
+		28FD643A2399E82D006312F7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		28FD643C2399EBC0006312F7 /* accountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountType.swift; sourceTree = "<group>"; };
 		6990911DEA624547158165AB /* Pods-Comprehensive Assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.release.xcconfig"; sourceTree = "<group>"; };
 		75780ED465AF18B4873DA35C /* Pods_Comprehensive AssessmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Comprehensive AssessmentTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A1C775F8D3A03598CA1C58 /* Pods-Comprehensive AssessmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive AssessmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive AssessmentTests/Pods-Comprehensive AssessmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 		28FD63C923956AB5006312F7 /* Comprehensive Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				28FD643C2399EBC0006312F7 /* accountType.swift */,
 				28FD64282398C9F4006312F7 /* Protocols */,
 				28FD641923961B1B006312F7 /* Secrets */,
 				28FD63F7239577D0006312F7 /* Controllers */,
@@ -184,6 +189,7 @@
 				28FD63F323957678006312F7 /* SignUpVC.swift */,
 				28FD63F5239576A1006312F7 /* ListVC.swift */,
 				28FD641E23970042006312F7 /* DetailVC.swift */,
+				28FD643A2399E82D006312F7 /* SettingsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -467,12 +473,14 @@
 				28FD640D239610EF006312F7 /* AppError.swift in Sources */,
 				28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */,
 				28FD64002395B5C5006312F7 /* FirestoreService.swift in Sources */,
+				28FD643B2399E82D006312F7 /* SettingsVC.swift in Sources */,
 				28FD63FB2395A0F0006312F7 /* TableViewCell.swift in Sources */,
 				28FD64252398125A006312F7 /* CellDelegate.swift in Sources */,
 				28FD64042395B66D006312F7 /* AppUser.swift in Sources */,
 				28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */,
 				28FD641D2396FB9D006312F7 /* DetailAPIClient.swift in Sources */,
 				28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */,
+				28FD643D2399EBC0006312F7 /* accountType.swift in Sources */,
 				28FD63FD2395B589006312F7 /* FirebaseAuthService.swift in Sources */,
 				28FD6412239619B8006312F7 /* NetworkHelper.swift in Sources */,
 				28FD6414239619EB006312F7 /* TicketsAPIClient.swift in Sources */,

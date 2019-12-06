@@ -21,9 +21,9 @@ class ListVC: UIViewController {
     var dataLocation: DataLocation! = .fromSearch
     var accountType: String! {
         didSet {
-            let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter city" : "Enter name"
-            
+            let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
             searchBar.placeholder = placeholder
+            setNavTitle(accountType: accountType)
         }
     }
     
@@ -61,6 +61,16 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getFavoritesForThisUser()
+        getAccountType()
+    }
+    
+    //MARK: Private Functions
+    
+    private func getAccountType() {
         let fireService = FirestoreService()
         fireService.getAccountType() { [weak self] (result) in
             switch result {
@@ -69,15 +79,8 @@ class ListVC: UIViewController {
             case .failure(let error):
                 print(error)
             }
-            
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getFavoritesForThisUser()
-    }
-    
-    //MARK: Private Functions
     
     private func loadDataFromTickets(city: String) {
         TicketsAPIClient.manager.getTickets(city: city) { (result) in
@@ -126,6 +129,14 @@ class ListVC: UIViewController {
                 }
             }
         }
+    }
+    
+    //MARK: Functions for accountType
+    
+    private func setNavTitle(accountType: String?) {
+        guard let accountType = accountType else {return}
+        let navTitle = self.dataLocation == .fromSearch ? "\(accountType)" : "Favorites from \(accountType)"
+        self.navigationItem.title = navTitle
     }
     
     
@@ -299,7 +310,7 @@ extension ListVC: CellDelegate {
                 }
             }
         } else {
-            let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
+            let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID, accountType: accountType)
             FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
                 switch result {
                 case .success():

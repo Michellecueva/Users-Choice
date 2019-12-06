@@ -11,11 +11,6 @@ import Firebase
 import FirebaseAuth
 
 
-enum APINames: String {
-    case ticketmaster
-    case rijksmuseum
-}
-
 class SignUpVC: UIViewController {
     
     var accountType = "ticketmaster"
@@ -66,7 +61,7 @@ class SignUpVC: UIViewController {
     
     lazy var selectAPILabel: UILabel = {
         let label = UILabel()
-        label.text = "Select and API to use for this account"
+        label.text = "Select an API to use for this account"
         label.textColor = .white
         return label
     }()

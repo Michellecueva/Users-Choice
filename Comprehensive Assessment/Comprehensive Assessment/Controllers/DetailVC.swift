@@ -67,7 +67,7 @@ class DetailVC: UIViewController {
                       }
                   }
               } else {
-                  let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID)
+                  let newFavorite = Favorite(title: currentItem.heading, imageURL: currentItem.imageUrl, subtitle: currentItem.subheading, dateCreated: Date(), creatorID: user.uid, itemID: currentItem.uniqueItemID, accountType: accountType)
                   FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
                       switch result {
                       case .success():

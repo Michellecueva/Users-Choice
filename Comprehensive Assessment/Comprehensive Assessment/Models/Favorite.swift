@@ -10,9 +10,6 @@ import Foundation
 import FirebaseFirestore
 
 struct Favorite: RequiredFields {
-    
-    
-    
     let title: String
     let imageURL: String
     let subtitle: String
@@ -20,8 +17,9 @@ struct Favorite: RequiredFields {
     let dateCreated: Date?
     let creatorID: String
     let itemID: String
+    let accountType: String
     
-    init(title: String, imageURL: String, subtitle: String, dateCreated: Date? = nil, creatorID: String, itemID: String) {
+    init(title: String, imageURL: String, subtitle: String, dateCreated: Date? = nil, creatorID: String, itemID: String, accountType: String) {
         self.title = title
         self.imageURL = imageURL
         self.subtitle = subtitle
@@ -29,6 +27,7 @@ struct Favorite: RequiredFields {
         self.dateCreated = dateCreated
         self.creatorID = creatorID
         self.itemID = itemID
+        self.accountType = accountType
     }
     
     init?(from dict: [String: Any], id: String) {
@@ -37,7 +36,9 @@ struct Favorite: RequiredFields {
             let subtitle = dict["subtitle"] as? String,
             let userID = dict["creatorID"] as? String,
             let itemID = dict["itemID"] as? String,
+            let accountType = dict["accountType"] as? String,
             let dateCreated = (dict["dateCreated"] as? Timestamp)?.dateValue() else { return nil }
+           
         
         self.imageURL = imageUrl
         self.title = title
@@ -46,6 +47,7 @@ struct Favorite: RequiredFields {
         self.dateCreated = dateCreated
         self.creatorID = userID
         self.itemID = itemID
+        self.accountType = accountType
     }
     
     var imageUrl: String {
@@ -81,7 +83,8 @@ struct Favorite: RequiredFields {
             "title": self.title,
             "subtitle": self.subtitle,
             "creatorID": self.creatorID,
-            "itemID": self.itemID
+            "itemID": self.itemID,
+            "accountType": self.accountType
         ]
     }
 }

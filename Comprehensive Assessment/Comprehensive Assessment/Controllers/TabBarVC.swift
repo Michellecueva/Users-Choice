@@ -14,12 +14,15 @@ class TabBarVC: UITabBarController {
     lazy var searchVC = UINavigationController(rootViewController: createSearchVC())
     
     lazy var favoriteVC = UINavigationController(rootViewController: createFavoritesVC())
+    
+    lazy var settingVC = UINavigationController(rootViewController: SettingsVC())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        self.viewControllers = [searchVC, favoriteVC]
+        settingVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "person"), tag: 2)
+        self.viewControllers = [searchVC, favoriteVC, settingVC]
         
     }
     
