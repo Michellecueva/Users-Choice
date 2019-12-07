@@ -14,7 +14,7 @@ class DetailVC: UIViewController {
     
     var detailItem: ArtObjectDetail!
     
-    var accountType: String!
+    var accountType = "ticketmaster"
     
     var favorites: [Favorite]!
     
@@ -164,12 +164,12 @@ class DetailVC: UIViewController {
             print("userID not found")
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            FirestoreService.manager.getFavorites(forUserID: id) { (result) in
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+            FirestoreService.manager.getFavorites(forUserID: id, accountType: self.accountType) { (result) in
                 switch result {
                 case .success(let favorites):
         
-                    self?.favorites = favorites
+                    self.favorites = favorites
                     
                     
                 case .failure(let error):

@@ -58,7 +58,21 @@ class FirestoreService {
         }
 
     }
-    //MARK: Posts
+    
+    func updateAccountType(accountType: String, completion: @escaping (Result<(), Error>) -> ()) {
+        guard let user = FirebaseAuthService.manager.currentUser else {
+                   fatalError()
+               }
+        db.collection(FireStoreCollections.users.rawValue).document(user.uid).updateData(["accountType": accountType]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+            }
+            completion(.success(()))
+        }
+        
+    }
+    //MARK: Favorite
     
     func createFavorite(favorite: Favorite, completion: @escaping (Result<(), Error>) -> ()) {
            var fields = favorite.fieldsDict
@@ -82,8 +96,8 @@ class FirestoreService {
         }
     }
     
-    func getFavorites(forUserID: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
-        db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).getDocuments { (snapshot, error) in
+    func getFavorites(forUserID: String, accountType: String, completion: @escaping (Result<[Favorite], Error>) -> ()) {
+        db.collection(FireStoreCollections.favorites.rawValue).whereField("creatorID", isEqualTo: forUserID).whereField("accountType", isEqualTo: accountType).getDocuments { (snapshot, error) in
             if let error = error {
                 completion(.failure(error))
             } else {

@@ -9,7 +9,11 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-    var accountType = "ticketmaster"
+    var accountType = "ticketmaster" {
+        didSet {
+            setSelectedRowOnPicker(accountType: accountType)
+        }
+    }
     
     lazy var selectAPILabel: UILabel = {
         let label = UILabel()
@@ -43,10 +47,28 @@ class SettingsVC: UIViewController {
         setSubviews()
         setConstraints()
         APIPicker.delegate = self
-        
+        getAccountType()
     }
     
+    
      //MARK: Private methods
+    
+    private func setSelectedRowOnPicker(accountType: String) {
+        let row = accountType == APINames.ticketmaster.rawValue ? 0: 1
+        APIPicker.selectRow(row, inComponent: 0, animated: true)
+    }
+    
+    
+    private func getAccountType() {
+        FirestoreService.manager.getAccountType() { [weak self] (result) in
+            switch result {
+            case .success(let typeFromDatabase):
+                self!.accountType = typeFromDatabase as! String
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
       //MARK: UI Setup
     
@@ -85,6 +107,17 @@ extension SettingsVC: UIPickerViewDataSource, UIPickerViewDelegate {
             accountType = APINames.rijksmuseum.rawValue
         }
         return accountType
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        FirestoreService.manager.updateAccountType(accountType: accountType) { (result) in
+            switch result {
+            case .success():
+                print("updated account type")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
 }

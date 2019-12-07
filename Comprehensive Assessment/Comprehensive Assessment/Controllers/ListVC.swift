@@ -19,11 +19,15 @@ class ListVC: UIViewController {
     
     
     var dataLocation: DataLocation! = .fromSearch
-    var accountType: String! {
+    var accountType = "ticketmaster" {
         didSet {
             let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
             searchBar.placeholder = placeholder
             setNavTitle(accountType: accountType)
+            items = []
+            favorites = []
+            getFavoritesForThisUser()
+
         }
     }
     
@@ -61,6 +65,7 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         searchBar.delegate = self
+        getAccountType()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,11 +76,11 @@ class ListVC: UIViewController {
     //MARK: Private Functions
     
     private func getAccountType() {
-        let fireService = FirestoreService()
-        fireService.getAccountType() { [weak self] (result) in
+          FirestoreService.manager.getAccountType() { [weak self] (result) in
             switch result {
             case .success(let typeFromDatabase):
-                self!.accountType = typeFromDatabase as? String
+                self!.accountType = typeFromDatabase as! String
+                
             case .failure(let error):
                 print(error)
             }
@@ -114,14 +119,14 @@ class ListVC: UIViewController {
             print("userID not found")
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            FirestoreService.manager.getFavorites(forUserID: id) { (result) in
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+            FirestoreService.manager.getFavorites(forUserID: id, accountType: self.accountType) { (result) in
                 switch result {
                 case .success(let favorites):
-                    if self?.dataLocation == .fromFavorites {
-                        self?.items = favorites
+                    if self.dataLocation == .fromFavorites {
+                        self.items = favorites
                     }
-                    self?.favorites = favorites
+                    self.favorites = favorites
                     
                     
                 case .failure(let error):
@@ -133,8 +138,7 @@ class ListVC: UIViewController {
     
     //MARK: Functions for accountType
     
-    private func setNavTitle(accountType: String?) {
-        guard let accountType = accountType else {return}
+    private func setNavTitle(accountType: String) {
         let navTitle = self.dataLocation == .fromSearch ? "\(accountType)" : "Favorites from \(accountType)"
         self.navigationItem.title = navTitle
     }
