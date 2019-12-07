@@ -48,7 +48,18 @@ class SettingsVC: UIViewController {
         setConstraints()
         APIPicker.delegate = self
         getAccountType()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style: .done, target: self, action: #selector(signOutButton))
     }
+    
+    @objc func signOutButton() {
+           FirebaseAuthService.manager.signOutUser()
+           
+           guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               
+               let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+           
+           window.rootViewController = SignInVC()
+       }
     
     
      //MARK: Private methods

@@ -59,11 +59,24 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         searchBar.delegate = self
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle.badge.xmark"), style:.plain, target: self, action: #selector(signOutButton))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         getAccountType()
     }
+    
+    //MARK: Obj-C Methods
+    
+    @objc func signOutButton() {
+         FirebaseAuthService.manager.signOutUser()
+         
+         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+             
+             let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+         
+         window.rootViewController = SignInVC()
+     }
     
     //MARK: Private Functions
     

@@ -16,12 +16,10 @@ class TabBarVC: UITabBarController {
     lazy var favoriteVC = UINavigationController(rootViewController: createFavoritesVC())
     
     lazy var settingVC = UINavigationController(rootViewController: SettingsVC())
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
-        settingVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "person"), tag: 2)
+        setTabBaritemsForVCs()
         self.viewControllers = [searchVC, favoriteVC, settingVC]
         
     }
@@ -29,26 +27,21 @@ class TabBarVC: UITabBarController {
     private func createSearchVC() -> UIViewController {
         let firstVC = ListVC()
         firstVC.dataLocation = .fromSearch
-        firstVC.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sign-out", style: .done, target: self, action: #selector(signOutButton))
         return firstVC
     }
     
     private func createFavoritesVC() -> UIViewController {
         let secondVC = ListVC()
         secondVC.dataLocation = .fromFavorites
-        secondVC.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sign-out", style: .done, target: self, action: #selector(signOutButton))
         return secondVC
         
     }
     
-    @objc func signOutButton() {
-        FirebaseAuthService.manager.signOutUser()
-        
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-            
-            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
-        
-        window.rootViewController = SignInVC()
+    private func setTabBaritemsForVCs() {
+        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        settingVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "person"), tag: 2)
     }
-
+    
+    
 }
