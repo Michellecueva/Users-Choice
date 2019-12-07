@@ -21,11 +21,9 @@ class ListVC: UIViewController {
     var dataLocation: DataLocation! = .fromSearch
     var accountType = "ticketmaster" {
         didSet {
-            let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
-            searchBar.placeholder = placeholder
+            setSearchBarPlaceHolder()
             setNavTitle(accountType: accountType)
             getFavoritesForThisUser()
-
         }
     }
     
@@ -40,8 +38,6 @@ class ListVC: UIViewController {
             listTableView.reloadData()
         }
     }
-    
-    var imageRetrieved: UIImage!
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -127,7 +123,6 @@ class ListVC: UIViewController {
                     }
                     self.favorites = favorites
                     
-                    
                 case .failure(let error):
                     print(":( \(error)")
                 }
@@ -138,8 +133,13 @@ class ListVC: UIViewController {
     //MARK: Functions for accountType
     
     private func setNavTitle(accountType: String) {
-        let navTitle = self.dataLocation == .fromSearch ? "\(accountType)" : "Favorites from \(accountType)"
+        let navTitle = self.dataLocation == .fromSearch ? "\(accountType)" : "\(accountType) Favorites"
         self.navigationItem.title = navTitle
+    }
+    
+    private func setSearchBarPlaceHolder() {
+        let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
+        searchBar.placeholder = placeholder
     }
     
     
@@ -240,8 +240,8 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
                 }
                 cell.activityIndicator.stopAnimating()
             }
-            
         }
+        
         return cell
     }
     
@@ -254,9 +254,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
         if self.dataLocation == .fromSearch {
             
             let currentItem = items[indexPath.row]
-            
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            
             let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
             
             DVC.currentItem = currentItem
@@ -264,8 +262,7 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
             DVC.favorites = favorites
             
             self.navigationController?.pushViewController(DVC, animated: true)
-        }
-        
+        }        
     }
 }
 
@@ -281,12 +278,10 @@ extension ListVC : UISearchBarDelegate {
                 guard let city = placemark?.locality else {return}
                 print(city)
                 self.loadDataFromTickets(city:city)
-                
             }
         } else {
             loadDataFromMuseum(maker: text)
         }
-        
     }
 }
 
@@ -322,8 +317,5 @@ extension ListVC: CellDelegate {
                 }
             }
         }
-        
     }
-    
-    
 }

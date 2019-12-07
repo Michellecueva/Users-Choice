@@ -14,16 +14,14 @@ class DetailVC: UIViewController {
     
     var detailItem: ArtObjectDetail!
     
-    var accountType = "ticketmaster"
+    var accountType: String!
     
     var favorites: [Favorite]!
-    
     
     
     @IBOutlet weak var detailImage: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
-    
     
     @IBOutlet weak var favoriteButton: UIButton!
     
@@ -39,16 +37,12 @@ class DetailVC: UIViewController {
         titleLabel.text = currentItem.heading
         loadData()
         loadImage()
+        SetFavoriteButtonImage()
         linkButton.isHidden = accountType != APINames.ticketmaster.rawValue
-        let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
-        let buttonImage = isFavorited ? "heart.fill" : "heart"
-        favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+       
     }
     
-    
-    func favoriteButtonPressedOnView(view: UIView) -> () {
-        
-    }
+    //MARK: IBAction Functions
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         
@@ -91,6 +85,14 @@ class DetailVC: UIViewController {
         guard let urlLink = url else {return}
         UIApplication.shared.open(urlLink, options:[:], completionHandler: nil)
 
+    }
+    
+ //MARK: Private Functions
+    
+    private func SetFavoriteButtonImage() {
+        let isFavorited = favorites.contains(where: {$0.uniqueItemID == currentItem.uniqueItemID})
+               let buttonImage = isFavorited ? "heart.fill" : "heart"
+               favoriteButton.setImage(UIImage(systemName: buttonImage, withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
     }
     
     private func loadData() {

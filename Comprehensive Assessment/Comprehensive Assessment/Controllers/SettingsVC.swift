@@ -84,10 +84,7 @@ class SettingsVC: UIViewController {
             stackView.heightAnchor.constraint(equalToConstant: 250),
             stackView.widthAnchor.constraint(equalToConstant: 350)
         ])
-       
-        
     }
-    
 }
 
 extension SettingsVC: UIPickerViewDataSource, UIPickerViewDelegate {
