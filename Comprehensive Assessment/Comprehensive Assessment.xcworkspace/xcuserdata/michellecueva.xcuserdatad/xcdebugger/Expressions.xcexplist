@@ -59,6 +59,9 @@
             <PersistentString
                value = "cell.nameLabel.text">
             </PersistentString>
+            <PersistentString
+               value = "favorites">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -75,6 +78,17 @@
             </PersistentString>
             <PersistentString
                value = "production place">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FirestoreService.getFavorites(forUserID:completion:):FirestoreService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshot">
+            </PersistentString>
+            <PersistentString
+               value = "snapshot.data()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -98,13 +112,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in FirestoreService.getFavorites(forUserID:completion:):FirestoreService.swift">
+         contextName = "DetailVC.favoriteButtonPressed(_:):DetailVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "snapshot">
+               value = "favorites">
             </PersistentString>
             <PersistentString
-               value = "snapshot.data()">
+               value = "currentItem">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -120,13 +134,13 @@
          contextName = "ListVC.tableView(_:cellForRowAt:):ListVC.swift">
          <PersistentStrings>
             <PersistentString
-               value = "cell.listImageView.image">
-            </PersistentString>
-            <PersistentString
                value = "cell">
             </PersistentString>
             <PersistentString
                value = "cell.favoriteButton.image(for: .normal).systemName">
+            </PersistentString>
+            <PersistentString
+               value = "cell.listImageView.image">
             </PersistentString>
             <PersistentString
                value = "cell.favoriteButton.image.systemName">
@@ -136,6 +150,9 @@
             </PersistentString>
             <PersistentString
                value = "cell.favoriteButton.image">
+            </PersistentString>
+            <PersistentString
+               value = "favorites">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

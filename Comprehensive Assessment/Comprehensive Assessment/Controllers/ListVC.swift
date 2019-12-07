@@ -24,8 +24,6 @@ class ListVC: UIViewController {
             let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
             searchBar.placeholder = placeholder
             setNavTitle(accountType: accountType)
-            items = []
-            favorites = []
             getFavoritesForThisUser()
 
         }
@@ -65,11 +63,9 @@ class ListVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         searchBar.delegate = self
-        getAccountType()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getFavoritesForThisUser()
         getAccountType()
     }
     
@@ -79,8 +75,12 @@ class ListVC: UIViewController {
           FirestoreService.manager.getAccountType() { [weak self] (result) in
             switch result {
             case .success(let typeFromDatabase):
-                self!.accountType = typeFromDatabase as! String
-                
+                let newAccountType = typeFromDatabase as! String
+                if self!.accountType != newAccountType {
+                    self!.items = []
+                    self!.searchBar.text = ""
+                }
+                self!.accountType = newAccountType
             case .failure(let error):
                 print(error)
             }
@@ -114,7 +114,6 @@ class ListVC: UIViewController {
     }
     
     private func getFavoritesForThisUser() {
-        
         guard  let id =  FirebaseAuthService.manager.currentUser?.uid else {
             print("userID not found")
             return
@@ -239,7 +238,6 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
                     print(error)
                     cell.listImageView.image = UIImage(named: "noImage")
                 }
-                
                 cell.activityIndicator.stopAnimating()
             }
             

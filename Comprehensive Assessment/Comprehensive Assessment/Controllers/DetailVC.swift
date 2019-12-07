@@ -46,6 +46,10 @@ class DetailVC: UIViewController {
     }
     
     
+    func favoriteButtonPressedOnView(view: UIView) -> () {
+        
+    }
+    
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         
         guard let user = FirebaseAuthService.manager.currentUser else {return}
@@ -60,8 +64,7 @@ class DetailVC: UIViewController {
                       switch result {
                       case .success():
                         self.favoriteButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
-                          //self.getFavoritesForThisUser()
-                        
+                            self.getFavoritesForThisUser()
                       case .failure(let error):
                           print("handleFavorites: Error Happened \(error)")
                       }
@@ -71,7 +74,8 @@ class DetailVC: UIViewController {
                   FirestoreService.manager.createFavorite(favorite: newFavorite) { (result) in
                       switch result {
                       case .success():
-                          self.favoriteButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+                        self.favoriteButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
+                        self.getFavoritesForThisUser()
                       case .failure(let error):
                           print(error)
                       }
@@ -168,10 +172,7 @@ class DetailVC: UIViewController {
             FirestoreService.manager.getFavorites(forUserID: id, accountType: self.accountType) { (result) in
                 switch result {
                 case .success(let favorites):
-        
                     self.favorites = favorites
-                    
-                    
                 case .failure(let error):
                     print(":( \(error)")
                 }
