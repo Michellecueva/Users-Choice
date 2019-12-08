@@ -40,6 +40,10 @@ class DetailVC: UIViewController {
         linkButton.isHidden = accountType != APINames.Ticketmaster.rawValue
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //MARK: IBAction Functions
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
