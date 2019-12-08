@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ8-NF-rtz">
-                                <rect key="frame" x="76.5" y="336" width="47" height="43"/>
+                                <rect key="frame" x="76.5" y="321" width="47" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="ZdH-4U-LpL"/>
                                     <constraint firstAttribute="width" constant="47" id="tvX-4P-Ym7"/>
@@ -90,7 +90,7 @@
                             <constraint firstItem="c4x-Yr-WWb" firstAttribute="centerX" secondItem="Qd8-Jr-fqP" secondAttribute="centerX" id="UQ1-XH-Q4s"/>
                             <constraint firstItem="eZy-Eb-Lk8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="18" id="WlF-v4-e0R"/>
                             <constraint firstItem="Qd8-Jr-fqP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ZnK-q7-3ut"/>
-                            <constraint firstItem="oJ8-NF-rtz" firstAttribute="top" secondItem="Qd8-Jr-fqP" secondAttribute="bottom" constant="25" id="blg-0a-3jm"/>
+                            <constraint firstItem="oJ8-NF-rtz" firstAttribute="top" secondItem="Qd8-Jr-fqP" secondAttribute="bottom" constant="10" id="blg-0a-3jm"/>
                             <constraint firstItem="KV8-A4-Bqw" firstAttribute="top" secondItem="eZy-Eb-Lk8" secondAttribute="bottom" constant="20" id="fjP-Kd-y2A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

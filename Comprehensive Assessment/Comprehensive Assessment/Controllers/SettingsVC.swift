@@ -127,5 +127,4 @@ extension SettingsVC: UIPickerViewDataSource, UIPickerViewDelegate {
             }
         }
     }
-    
 }
