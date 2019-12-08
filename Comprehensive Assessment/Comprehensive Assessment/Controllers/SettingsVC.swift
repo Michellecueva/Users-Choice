@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-    var accountType = "ticketmaster" {
+    var accountType = "Ticketmaster" {
         didSet {
             setSelectedRowOnPicker(accountType: accountType)
         }
@@ -65,7 +65,7 @@ class SettingsVC: UIViewController {
      //MARK: Private methods
     
     private func setSelectedRowOnPicker(accountType: String) {
-        let row = accountType == APINames.ticketmaster.rawValue ? 0: 1
+        let row = accountType == APINames.Ticketmaster.rawValue ? 0: 1
         APIPicker.selectRow(row, inComponent: 0, animated: true)
     }
     
@@ -110,9 +110,9 @@ extension SettingsVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch row {
         case 0:
-            accountType = APINames.ticketmaster.rawValue
+            accountType = APINames.Ticketmaster.rawValue
         default:
-            accountType = APINames.rijksmuseum.rawValue
+            accountType = APINames.Rijksmuseum.rawValue
         }
         return accountType
     }

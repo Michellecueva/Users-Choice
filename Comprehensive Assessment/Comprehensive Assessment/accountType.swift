@@ -10,6 +10,6 @@ import Foundation
 
 
 enum APINames: String {
-    case ticketmaster
-    case rijksmuseum
+    case Ticketmaster
+    case Rijksmuseum
 }

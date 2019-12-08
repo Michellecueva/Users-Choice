@@ -21,7 +21,6 @@ class TabBarVC: UITabBarController {
         super.viewDidLoad()
         setTabBaritemsForVCs()
         self.viewControllers = [searchVC, favoriteVC, settingVC]
-        
     }
     
     private func createSearchVC() -> UIViewController {

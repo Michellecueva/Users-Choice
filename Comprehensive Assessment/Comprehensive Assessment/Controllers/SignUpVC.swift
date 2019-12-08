@@ -13,7 +13,7 @@ import FirebaseAuth
 
 class SignUpVC: UIViewController {
     
-    var accountType = "ticketmaster"
+    var accountType = "Ticketmaster"
     
     lazy var titleLabel: UILabel = {
            let label = UILabel()
@@ -255,9 +255,9 @@ extension SignUpVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch row {
         case 0:
-            accountType = APINames.ticketmaster.rawValue
+            accountType = APINames.Ticketmaster.rawValue
         default:
-            accountType = APINames.rijksmuseum.rawValue
+            accountType = APINames.Rijksmuseum.rawValue
         }
         return accountType
     }

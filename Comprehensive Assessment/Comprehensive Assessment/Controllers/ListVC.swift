@@ -19,7 +19,7 @@ class ListVC: UIViewController {
     
     
     var dataLocation: DataLocation! = .fromSearch
-    var accountType = "ticketmaster" {
+    var accountType = "Ticketmaster" {
         didSet {
             setSearchBarPlaceHolder()
             setNavTitle(accountType: accountType)
@@ -69,19 +69,19 @@ class ListVC: UIViewController {
     //MARK: Obj-C Methods
     
     @objc func signOutButton() {
-         FirebaseAuthService.manager.signOutUser()
-         
-         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-             
-             let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
-         
-         window.rootViewController = SignInVC()
-     }
+        FirebaseAuthService.manager.signOutUser()
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            
+            let sceneDelegate = windowScene.delegate as? SceneDelegate, let window = sceneDelegate.window else {return}
+        
+        window.rootViewController = SignInVC()
+    }
     
     //MARK: Private Functions
     
     private func getAccountType() {
-          FirestoreService.manager.getAccountType() { [weak self] (result) in
+        FirestoreService.manager.getAccountType() { [weak self] (result) in
             switch result {
             case .success(let typeFromDatabase):
                 let newAccountType = typeFromDatabase as! String
@@ -143,7 +143,6 @@ class ListVC: UIViewController {
         }
     }
     
-    //MARK: Functions for accountType
     
     private func setNavTitle(accountType: String) {
         let navTitle = self.dataLocation == .fromSearch ? "\(accountType)" : "\(accountType) Favorites"
@@ -151,7 +150,7 @@ class ListVC: UIViewController {
     }
     
     private func setSearchBarPlaceHolder() {
-        let placeholder = accountType == APINames.ticketmaster.rawValue ? "Enter City" : "Enter Name"
+        let placeholder = accountType == APINames.Ticketmaster.rawValue ? "Enter City" : "Enter Name"
         searchBar.placeholder = placeholder
     }
     
@@ -178,7 +177,6 @@ class ListVC: UIViewController {
     private func setConstraintsForSearchVC() {
         setSearchBarConstraints()
         setTableviewConstraints()
-        
     }
     
     private func setConstraintsForFavVC() {
@@ -264,18 +262,18 @@ extension ListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if self.dataLocation == .fromSearch {
-            
-            let currentItem = items[indexPath.row]
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
-            
-            DVC.currentItem = currentItem
-            DVC.accountType = accountType
-            DVC.favorites = favorites
-            
-            self.navigationController?.pushViewController(DVC, animated: true)
-        }        
+        if dataLocation == .fromFavorites {return}
+        
+        let currentItem = items[indexPath.row]
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let DVC = storyBoard.instantiateViewController(identifier: "detailView") as! DetailVC
+        
+        DVC.currentItem = currentItem
+        DVC.accountType = accountType
+        DVC.favorites = favorites
+        
+        self.navigationController?.pushViewController(DVC, animated: true)
+        
     }
 }
 
@@ -283,13 +281,12 @@ extension ListVC : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else {return}
         
-        if accountType == APINames.ticketmaster.rawValue {
+        if accountType == APINames.Ticketmaster.rawValue {
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString(text) {
                 placemarks, error in
                 let placemark = placemarks?.first
                 guard let city = placemark?.locality else {return}
-                print(city)
                 self.loadDataFromTickets(city:city)
             }
         } else {

@@ -74,8 +74,7 @@ struct Favorite: RequiredFields {
     
     var linkToEvent: String?
     
-    var objectID: String?
-    
+    var objectID: String? 
     
     var fieldsDict: [String: Any] {
         return [
@@ -84,7 +83,7 @@ struct Favorite: RequiredFields {
             "subtitle": self.subtitle,
             "creatorID": self.creatorID,
             "itemID": self.itemID,
-            "accountType": self.accountType
+            "accountType": self.accountType,
         ]
     }
 }
