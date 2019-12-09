@@ -97,11 +97,11 @@ class ListVC: UIViewController {
     }
     
     private func loadDataFromTickets(city: String) {
-        TicketsAPIClient.manager.getTickets(city: city) { (result) in
+        TicketsAPIClient.manager.getTickets(city: city) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let eventsFromOnline):
-                    self.items = eventsFromOnline
+                    self!.items = eventsFromOnline
                 case .failure(let error):
                     print(error)
                 }
@@ -110,11 +110,11 @@ class ListVC: UIViewController {
     }
     
     private func loadDataFromMuseum(maker: String) {
-        MuseumAPIClient.manager.getArtObjects(maker: maker) { (result) in
+        MuseumAPIClient.manager.getArtObjects(maker: maker) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let objectsFromOnline):
-                    self.items = objectsFromOnline
+                    self!.items = objectsFromOnline
                 case .failure(let error):
                     print(error)
                 }
@@ -127,14 +127,14 @@ class ListVC: UIViewController {
             print("userID not found")
             return
         }
-        DispatchQueue.global(qos: .userInitiated).async { [self] in
-            FirestoreService.manager.getFavorites(forUserID: id, accountType: self.accountType) { (result) in
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            FirestoreService.manager.getFavorites(forUserID: id, accountType: self!.accountType) { (result) in
                 switch result {
                 case .success(let favorites):
-                    if self.dataLocation == .fromFavorites {
-                        self.items = favorites
+                    if self!.dataLocation == .fromFavorites {
+                        self!.items = favorites
                     }
-                    self.favorites = favorites
+                    self!.favorites = favorites
                     
                 case .failure(let error):
                     print(":( \(error)")
