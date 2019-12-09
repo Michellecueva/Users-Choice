@@ -311,7 +311,10 @@ extension ListVC: CellDelegate {
             FirestoreService.manager.removeFavorite(favorite: favoriteItem) { (result) in
                 switch result {
                 case .success():
-                    self.getFavoritesForThisUser()
+                    let indexOfFav = self.favorites.firstIndex { $0.itemID == favoriteItem.itemID}
+                    guard let index = indexOfFav else {return}
+                    self.favorites.remove(at: index)
+                    self.listTableView.reloadData()
                 case .failure(let error):
                     print("handleFavorites: Error Happened \(error)")
                 }

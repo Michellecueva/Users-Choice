@@ -60,7 +60,10 @@ class DetailVC: UIViewController {
                 switch result {
                 case .success():
                     self.favoriteButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight:.regular)), for: .normal)
-                    self.getFavoritesForThisUser()
+                    let indexOfFav = self.favorites.firstIndex { $0.itemID == favoriteItem.itemID}
+                    guard let index = indexOfFav else {return}
+                    self.favorites.remove(at: index)
+
                 case .failure(let error):
                     print("handleFavorites: Error Happened \(error)")
                 }
