@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281AFA7823A5E763006886F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 281AFA7723A5E763006886F8 /* GoogleService-Info.plist */; };
 		28FD63CB23956AB5006312F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CA23956AB5006312F7 /* AppDelegate.swift */; };
 		28FD63CD23956AB5006312F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CC23956AB5006312F7 /* SceneDelegate.swift */; };
 		28FD63CF23956AB5006312F7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63CE23956AB5006312F7 /* SignInVC.swift */; };
@@ -14,7 +15,6 @@
 		28FD63D523956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */; };
 		28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D623956AB8006312F7 /* Assets.xcassets */; };
 		28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63D823956AB8006312F7 /* LaunchScreen.storyboard */; };
-		28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28FD63E123957261006312F7 /* GoogleService-Info.plist */; };
 		28FD63EA23957531006312F7 /* Comprehensive_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */; };
 		28FD63F2239575D5006312F7 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F1239575D5006312F7 /* TabBarVC.swift */; };
 		28FD63F423957678006312F7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD63F323957678006312F7 /* SignUpVC.swift */; };
@@ -48,6 +48,7 @@
 		28FD643923999CF8006312F7 /* ArtObjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD641A2396ED8F006312F7 /* ArtObjectDetail.swift */; };
 		28FD643B2399E82D006312F7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD643A2399E82D006312F7 /* SettingsVC.swift */; };
 		28FD643D2399EBC0006312F7 /* accountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD643C2399EBC0006312F7 /* accountType.swift */; };
+		A44FA367952DCA1DDEEC3CFB /* libPods-Comprehensive AssessmentTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F779B207F674E4BAD40BAEE6 /* libPods-Comprehensive AssessmentTests.a */; };
 		D1B8D306B69D3E2468A32609 /* Pods_Comprehensive_Assessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		133D9E31914173DD609D3FD4 /* Pods-Comprehensive AssessmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive AssessmentTests.release.xcconfig"; path = "Target Support Files/Pods-Comprehensive AssessmentTests/Pods-Comprehensive AssessmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		281AFA7723A5E763006886F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28FD63C723956AB5006312F7 /* Comprehensive Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comprehensive Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD63CA23956AB5006312F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28FD63CC23956AB5006312F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 		28FD63D623956AB8006312F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28FD63D923956AB8006312F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28FD63DB23956AB8006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28FD63E123957261006312F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28FD63E723957530006312F7 /* Comprehensive AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comprehensive AssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28FD63E923957531006312F7 /* Comprehensive_AssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comprehensive_AssessmentTests.swift; sourceTree = "<group>"; };
 		28FD63EB23957531006312F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		99A1C775F8D3A03598CA1C58 /* Pods-Comprehensive AssessmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive AssessmentTests.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive AssessmentTests/Pods-Comprehensive AssessmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8780DCB0EB9ACCFE0BBC78B /* Pods-Comprehensive Assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comprehensive Assessment.debug.xcconfig"; path = "Target Support Files/Pods-Comprehensive Assessment/Pods-Comprehensive Assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comprehensive_Assessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F779B207F674E4BAD40BAEE6 /* libPods-Comprehensive AssessmentTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Comprehensive AssessmentTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A44FA367952DCA1DDEEC3CFB /* libPods-Comprehensive AssessmentTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +166,7 @@
 				28FD64292398CA0D006312F7 /* Extensions */,
 				28FD63F923957818006312F7 /* Supporting Files */,
 				28FD63DB23956AB8006312F7 /* Info.plist */,
-				28FD63E123957261006312F7 /* GoogleService-Info.plist */,
+				281AFA7723A5E763006886F8 /* GoogleService-Info.plist */,
 				28FD63D323956AB5006312F7 /* Comprehensive_Assessment.xcdatamodeld */,
 			);
 			path = "Comprehensive Assessment";
@@ -289,6 +292,7 @@
 			children = (
 				EF3160163A5192C7735E9F94 /* Pods_Comprehensive_Assessment.framework */,
 				75780ED465AF18B4873DA35C /* Pods_Comprehensive AssessmentTests.framework */,
+				F779B207F674E4BAD40BAEE6 /* libPods-Comprehensive AssessmentTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FD63DA23956AB8006312F7 /* LaunchScreen.storyboard in Resources */,
-				28FD63E223957261006312F7 /* GoogleService-Info.plist in Resources */,
+				281AFA7823A5E763006886F8 /* GoogleService-Info.plist in Resources */,
 				28FD63D723956AB8006312F7 /* Assets.xcassets in Resources */,
 				28FD63D223956AB5006312F7 /* Main.storyboard in Resources */,
 			);
