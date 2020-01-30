@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SettingsVC.pickerView(_:didSelectRow:inComponent:):SettingsVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "accountType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ListVC.getFavoritesForThisUser():ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FirebaseAuthService.manager.currentUser?.uid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ListVC.getAccountType():ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self!.accountType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ListVC.getFavoritesForThisUser():ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "favorites">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpVC.pickerView(_:titleForRow:forComponent:):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "APINames.ticketmaster.rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FirestoreService.createAppUser(user:completion:):FirestoreService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Date()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FirestoreService.createAppUser(user:completion:):FirestoreService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #2 in ListVC.tableView(_:cellForRowAt:):ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.nameLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "favorites">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in DetailVC.loadDataForMuseum():DetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "detailsFromOnline.productionPlaces[0]">
+            </PersistentString>
+            <PersistentString
+               value = "detailsFromOnline">
+            </PersistentString>
+            <PersistentString
+               value = "productionPlace">
+            </PersistentString>
+            <PersistentString
+               value = "production place">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FirestoreService.getFavorites(forUserID:completion:):FirestoreService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshot">
+            </PersistentString>
+            <PersistentString
+               value = "snapshot.data()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #2 in ListVC.tableView(_:cellForRowAt:):ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.nameLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in SignUpVC.handleCreateAccountResponse(result:):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppUser(from: user, accountType: &quot;Ticketmaster&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailVC.favoriteButtonPressed(_:):DetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "favorites">
+            </PersistentString>
+            <PersistentString
+               value = "currentItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SignUpVC.handleCreateAccountResponse(result:):SignUpVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "accountType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ListVC.tableView(_:cellForRowAt:):ListVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell">
+            </PersistentString>
+            <PersistentString
+               value = "cell.favoriteButton.image(for: .normal).systemName">
+            </PersistentString>
+            <PersistentString
+               value = "cell.listImageView.image">
+            </PersistentString>
+            <PersistentString
+               value = "cell.favoriteButton.image.systemName">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "cell.favoriteButton.image">
+            </PersistentString>
+            <PersistentString
+               value = "favorites">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ListVC.tableView(_:cellForRowAt:):ListVC.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
